@@ -6,7 +6,7 @@ export function Thesis() {
     >
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
+          <h2 className="reveal text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             AlphaFold cracked protein structure in 2020. Billions went to
             pharma.{" "}
             <span className="accent-text font-normal">
@@ -15,7 +15,7 @@ export function Thesis() {
           </h2>
         </div>
 
-        <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-[17px] leading-[1.7] text-[var(--text-dim)]">
+        <div className="reveal-stagger lg:col-span-7 lg:col-start-6 space-y-6 text-[17px] leading-[1.7] text-[var(--text-dim)]">
           <p>
             Nutrition <span className="text-[var(--text)]">is</span> protein
             engineering. Meat texture comes from myosin and collagen. Eggs set
@@ -44,7 +44,7 @@ export function Thesis() {
         </div>
       </div>
 
-      <div className="mt-16 grid gap-px overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2">
+      <div className="reveal-stagger mt-16 grid gap-px overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2">
         <Stat
           kicker="Ignored for"
           value="5 years"

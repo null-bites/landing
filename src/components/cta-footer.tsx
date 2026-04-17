@@ -7,7 +7,7 @@ export function CtaFooter() {
           className="pointer-events-none absolute inset-0 -z-10 grid-dots opacity-60"
         />
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-10 px-6 py-28 lg:flex-row lg:items-end lg:justify-between lg:px-10">
-          <div>
+          <div className="reveal">
             <h2 className="text-balance text-3xl font-light leading-[1.05] tracking-[-0.025em] text-[var(--text)] sm:text-5xl lg:text-6xl">
               Manufacturing with us.
               <br />
@@ -19,7 +19,7 @@ export function CtaFooter() {
           <div className="flex flex-col gap-3">
             <a
               href="mailto:founders@nullbites.com"
-              className="inline-flex items-center gap-3 rounded-md bg-[var(--text)] px-6 py-4 text-[15px] font-medium text-[var(--bg)] transition hover:bg-[var(--accent)]"
+              className="button-primary inline-flex items-center gap-3 rounded-md bg-[var(--text)] px-6 py-4 text-[15px] font-medium text-[var(--bg)] hover:bg-[var(--accent)]"
             >
               founders@nullbites.com
               <span aria-hidden>→</span>

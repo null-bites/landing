@@ -62,7 +62,7 @@ export function Designs() {
       className="relative mx-auto w-full max-w-7xl px-6 py-32 lg:px-10"
     >
       <div className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div className="max-w-2xl">
+        <div className="reveal max-w-2xl">
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             Five proteins going to market.{" "}
             <span className="accent-text font-normal">
@@ -76,11 +76,11 @@ export function Designs() {
         </p>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="reveal-stagger grid gap-6 lg:grid-cols-3">
         {designs.map((d, i) => (
           <article
             key={d.codename}
-            className="group relative flex flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] transition hover:border-[var(--border-strong)]"
+            className="hover-lift group relative flex flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]"
           >
             <div className="relative aspect-[4/3] border-b border-[var(--border)] bg-[var(--bg)]">
               <div className="absolute inset-0 viewer-mask">

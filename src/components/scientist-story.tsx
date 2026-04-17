@@ -314,7 +314,7 @@ const scenes: Scene[] = [
 export function ScientistStory() {
   return (
     <div className="relative">
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+      <div className="reveal-stagger grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
         {scenes.map((s, i) => (
           <div
             key={s.n}
