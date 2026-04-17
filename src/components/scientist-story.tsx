@@ -37,7 +37,7 @@ function AiCore() {
           path="M 115 80 A 35 35 0 1 1 45 80 A 35 35 0 1 1 115 80"
         />
       </circle>
-      <circle r="2.5" fill="var(--accent-olive)">
+      <circle r="2.5" fill="var(--accent-warm)">
         <animateMotion
           dur="5.5s"
           repeatCount="indefinite"
@@ -130,11 +130,14 @@ function RankBars() {
 }
 
 function FlaskRibbon() {
+  // Flask body (Erlenmeyer). Neck: x 68-92, y 30-65.
+  // Shoulder slope 65→120 widens to x 38-122. Bottom y=135.
+  // Usable interior ≈ y 100-128, x 52-108.
   return (
     <svg viewBox="0 0 160 160" className="h-full w-full" aria-hidden>
       {/* Flask outline */}
       <path
-        d="M 65 30 L 65 65 L 40 120 Q 40 135 55 135 L 105 135 Q 120 135 120 120 L 95 65 L 95 30 Z"
+        d="M 68 30 L 68 65 L 38 120 Q 38 135 53 135 L 107 135 Q 122 135 122 120 L 92 65 L 92 30 Z"
         fill="var(--bg)"
         stroke="var(--accent)"
         strokeWidth="1.5"
@@ -142,45 +145,47 @@ function FlaskRibbon() {
       />
       {/* Neck cap */}
       <rect
-        x="62"
+        x="65"
         y="26"
-        width="36"
+        width="30"
         height="6"
         rx="1.5"
         fill="var(--accent)"
         opacity="0.85"
       />
-      {/* Liquid line */}
+      {/* Liquid level */}
       <path
-        d="M 48 105 Q 80 112 112 105"
+        d="M 46 108 Q 80 114 114 108"
         stroke="var(--accent)"
         strokeWidth="1"
         fill="none"
         opacity="0.5"
       />
-      {/* Protein ribbon inside (coiled) */}
-      <path
-        d="M 60 90 C 70 75, 60 65, 75 60 C 95 55, 85 80, 100 82 C 110 84, 100 100, 85 100 C 70 100, 75 92, 60 90 Z"
-        fill="none"
-        stroke="var(--accent)"
-        strokeWidth="2"
-        strokeLinecap="round"
-      >
-        <animateTransform
-          attributeName="transform"
-          type="rotate"
-          from="0 80 85"
-          to="360 80 85"
-          dur="16s"
-          repeatCount="indefinite"
-        />
-      </path>
-      {/* Bubbles */}
+      {/* Protein coil — stays inside the lower bulb (y 102-128, x 56-104) */}
+      <g transform="translate(80 116)">
+        <path
+          d="M -18 0 C -22 -10, -8 -14, 0 -8 C 8 -2, 18 -10, 22 0 C 20 10, 6 14, 0 8 C -6 2, -14 10, -18 0 Z"
+          fill="none"
+          stroke="var(--accent)"
+          strokeWidth="2"
+          strokeLinecap="round"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 0 0"
+            to="360 0 0"
+            dur="18s"
+            repeatCount="indefinite"
+          />
+        </path>
+      </g>
+      {/* Bubbles rising but kept inside bulb (clamped at y=70, inside the shoulder) */}
       {[
-        { x: 55, y: 115, r: 2.2, d: 2.4 },
-        { x: 75, y: 122, r: 1.8, d: 3.1 },
-        { x: 95, y: 118, r: 2.6, d: 2.7 },
-        { x: 105, y: 125, r: 1.5, d: 3.5 },
+        { x: 60, y: 126, r: 2.2, d: 2.6, rise: 18 },
+        { x: 74, y: 130, r: 1.6, d: 3.3, rise: 22 },
+        { x: 92, y: 124, r: 2.4, d: 2.9, rise: 20 },
+        { x: 100, y: 130, r: 1.4, d: 3.7, rise: 24 },
       ].map((b, i) => (
         <circle
           key={i}
@@ -192,7 +197,7 @@ function FlaskRibbon() {
         >
           <animate
             attributeName="cy"
-            values={`${b.y};${b.y - 28};${b.y}`}
+            values={`${b.y};${b.y - b.rise};${b.y}`}
             dur={`${b.d}s`}
             repeatCount="indefinite"
           />
@@ -267,7 +272,7 @@ function ChefProduct() {
         <circle cx="140" cy="70" r="2" fill="var(--accent)">
           <animate attributeName="opacity" values="0;1;0" dur="2.2s" repeatCount="indefinite" />
         </circle>
-        <circle cx="20" cy="108" r="1.8" fill="var(--accent-olive)">
+        <circle cx="20" cy="108" r="1.8" fill="var(--accent-warm)">
           <animate attributeName="opacity" values="1;0;1" dur="2.6s" repeatCount="indefinite" />
         </circle>
       </g>

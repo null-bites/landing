@@ -59,7 +59,6 @@ export function Pipeline() {
       <div className="mx-auto w-full max-w-7xl px-6 py-32 lg:px-10">
         <div className="mb-14 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="label mb-4">02 · The loop</p>
             <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
               Meet the{" "}
               <span className="accent-text font-normal">

@@ -8,7 +8,6 @@ export function CtaFooter() {
         />
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-10 px-6 py-28 lg:flex-row lg:items-end lg:justify-between lg:px-10">
           <div>
-            <p className="label mb-4">05 · Get in touch</p>
             <h2 className="text-balance text-3xl font-light leading-[1.05] tracking-[-0.025em] text-[var(--text)] sm:text-5xl lg:text-6xl">
               Manufacturing with us.
               <br />

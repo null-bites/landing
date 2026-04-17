@@ -11,6 +11,7 @@ export function Hero() {
         <ProteinViewer
           pdbId="1HHO"
           mode="spectrum"
+          accent="#0E8F85"
           spinSpeed={0.25}
           zoom={1.2}
         />

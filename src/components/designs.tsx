@@ -23,7 +23,7 @@ const designs: Design[] = [
       { label: "ΔG", value: "−11.3" },
       { label: "Tm", value: "78 °C" },
     ],
-    color: "#C4521B",
+    color: "#0E8F85",
   },
   {
     codename: "NB-FIBRE-03",
@@ -37,7 +37,7 @@ const designs: Design[] = [
       { label: "ΔG", value: "−9.7" },
       { label: "Tm", value: "72 °C" },
     ],
-    color: "#8B7B2E",
+    color: "#E4A04A",
   },
   {
     codename: "NB-GEL-02",
@@ -51,7 +51,7 @@ const designs: Design[] = [
       { label: "ΔG", value: "−10.1" },
       { label: "Tm", value: "65 °C" },
     ],
-    color: "#2D3321",
+    color: "#1A2925",
   },
 ];
 
@@ -63,7 +63,6 @@ export function Designs() {
     >
       <div className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl">
-          <p className="label mb-4">03 · The products</p>
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             Five proteins going to market.{" "}
             <span className="accent-text font-normal">

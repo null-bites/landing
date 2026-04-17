@@ -6,7 +6,6 @@ export function Thesis() {
     >
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <p className="label mb-4">01 · The thesis</p>
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             AlphaFold cracked protein structure in 2020. Billions went to
             pharma.{" "}
