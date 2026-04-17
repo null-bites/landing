@@ -37,17 +37,17 @@ export function Pipeline() {
     },
     {
       id: "05",
-      label: "Synthesize",
+      label: "Bench",
       tech: "Gene synthesis · E.coli",
       detail:
-        "Top candidates are ordered as DNA, expressed in bacteria, purified, and handed to the bench.",
+        "Top candidates are ordered as DNA, expressed in bacteria, purified, and handed to the formulation team.",
     },
     {
       id: "06",
-      label: "Eat",
-      tech: "Wet lab · Sensory panel",
+      label: "Product",
+      tech: "Formulate · sensory · ship",
       detail:
-        "The only benchmark that matters: a human picks up a product made from a protein the AI wrote, and takes a bite.",
+        "Proteins become ingredients, ingredients become food. The final benchmark: a human picks it up and takes a bite.",
     },
   ];
 
@@ -62,9 +62,8 @@ export function Pipeline() {
             <p className="label mb-4">02 · The loop</p>
             <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
               A closed loop from{" "}
-              <em className="rainbow-text not-italic font-normal">a paper</em>{" "}
-              to{" "}
-              <em className="rainbow-text not-italic font-normal">a bite</em>.
+              <span className="accent-text font-normal">a paper</span> to{" "}
+              <span className="accent-text font-normal">a product</span>.
             </h2>
           </div>
           <p className="max-w-sm text-[15px] text-[var(--text-dim)]">
@@ -73,7 +72,6 @@ export function Pipeline() {
           </p>
         </div>
 
-        {/* Split layout: animated diagram + step list */}
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="order-last lg:order-first">
             <LoopDiagram />
@@ -106,15 +104,15 @@ export function Pipeline() {
 
         <div className="mt-10 flex flex-wrap items-center gap-6 text-[13px] text-[var(--text-dim)]">
           <span className="flex items-center gap-2">
-            <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-mint)]" />
+            <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
             <span className="font-mono">pipeline: running</span>
           </span>
           <span className="flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-amber)]" />
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-olive)]" />
             <span className="font-mono">designs/hour: 12–18</span>
           </span>
           <span className="flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-blue)]" />
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-ink)]" />
             <span className="font-mono">last cycle: 2 min ago</span>
           </span>
         </div>

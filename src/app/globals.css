@@ -1,21 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #fbfaf6;
-  --surface: #f3f1ea;
-  --surface-2: #ece9df;
-  --border: #e3dfd3;
-  --border-strong: #c9c4b4;
-  --text: #0a0a0b;
-  --text-dim: #5e6062;
-  --text-muted: #8e918f;
-  --accent: #6b4dff;
-  --accent-violet: #7c5cff;
-  --accent-mint: #2bb673;
-  --accent-blue: #4a8cff;
-  --accent-amber: #e0a034;
-  --accent-pink: #ff6a9a;
-  --accent-glow: rgba(124, 92, 255, 0.18);
+  --bg: #f6f1e6;
+  --surface: #efe6d1;
+  --surface-2: #e5dac0;
+  --border: #d9cfb9;
+  --border-strong: #b9af96;
+  --text: #19160f;
+  --text-dim: #575147;
+  --text-muted: #8c8575;
+  --accent: #c4521b;
+  --accent-hover: #a4431a;
+  --accent-ink: #2d3321;
+  --accent-olive: #8b7b2e;
+  --accent-soft: rgba(196, 82, 27, 0.14);
 }
 
 @theme inline {
@@ -28,11 +26,9 @@
   --color-text-dim: var(--text-dim);
   --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
-  --color-accent-violet: var(--accent-violet);
-  --color-accent-mint: var(--accent-mint);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-amber: var(--accent-amber);
-  --color-accent-pink: var(--accent-pink);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-olive: var(--accent-olive);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -54,14 +50,14 @@ body {
 
 body {
   background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(124, 92, 255, 0.08), transparent 60%),
-    radial-gradient(900px 500px at 0% 110%, rgba(43, 182, 115, 0.05), transparent 60%),
+    radial-gradient(1200px 600px at 85% -10%, rgba(196, 82, 27, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 0% 110%, rgba(45, 51, 33, 0.05), transparent 60%),
     var(--bg);
   min-height: 100vh;
 }
 
 ::selection {
-  background: var(--accent-glow);
+  background: var(--accent-soft);
   color: var(--accent);
 }
 
@@ -90,7 +86,7 @@ body {
 .grid-dots {
   background-image: radial-gradient(
     circle at 1px 1px,
-    rgba(10, 10, 11, 0.06) 1px,
+    rgba(25, 22, 15, 0.07) 1px,
     transparent 0
   );
   background-size: 24px 24px;
@@ -109,19 +105,8 @@ body {
   );
 }
 
-/* Rainbow gradient text — used once on hero */
-.rainbow-text {
-  background: linear-gradient(
-    100deg,
-    var(--accent-violet) 0%,
-    var(--accent-pink) 30%,
-    var(--accent-amber) 55%,
-    var(--accent-mint) 80%,
-    var(--accent-blue) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.accent-text {
+  color: var(--accent);
 }
 
 @keyframes glow-pulse {
@@ -146,16 +131,6 @@ body {
 .fade-in-up {
   animation: fade-in-up 0.7s ease-out both;
 }
-
-/* Loop-diagram specific */
-@keyframes orbit-dot {
-  from { offset-distance: 0%; }
-  to { offset-distance: 100%; }
-}
-.orbit-path-1 { offset-path: path("M 200 30 A 170 170 0 0 1 370 200"); animation: orbit-dot 5s linear infinite; }
-.orbit-path-2 { offset-path: path("M 370 200 A 170 170 0 0 1 200 370"); animation: orbit-dot 5s linear infinite 0.8s; }
-.orbit-path-3 { offset-path: path("M 200 370 A 170 170 0 0 1 30 200"); animation: orbit-dot 5s linear infinite 1.6s; }
-.orbit-path-4 { offset-path: path("M 30 200 A 170 170 0 0 1 200 30"); animation: orbit-dot 5s linear infinite 2.4s; }
 
 @keyframes spin-slow {
   to { transform: rotate(360deg); }

@@ -6,19 +6,20 @@ export function OpenScience() {
           <p className="label mb-4">04 · Open by default</p>
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             The{" "}
-            <em className="rainbow-text not-italic font-normal">
-              first nutrition science program
-            </em>{" "}
+            <span className="accent-text font-normal">
+              first nutrition-products company
+            </span>{" "}
             run in the open.
           </h2>
           <p className="mt-8 text-[17px] leading-[1.7] text-[var(--text-dim)]">
             Every sequence, every score, every failed synthesis. Published
-            within 48 hours. Forkable. Falsifiable.
+            within 48 hours. Forkable. Falsifiable. The product margins are
+            ours. The science isn&apos;t.
           </p>
           <p className="mt-4 text-[17px] leading-[1.7] text-[var(--text-dim)]">
-            Pharma kept its wins private and its failures private too. We
-            don&apos;t have that luxury — and honestly, neither did they. Food
-            is too important to stay closed.
+            Pharma kept its wins private and its failures private too. Food is
+            too important for that. Open the science, ship the product, let
+            anyone build the next one.
           </p>
           <div className="mt-10">
             <a
@@ -58,23 +59,20 @@ function GithubGlyph() {
 
 function CommitStream() {
   const rows = [
-    { t: "2m", hash: "7ab91f2", msg: "NB-IRON-07: dock score improved −11.3 → −12.1", tag: "design", color: "var(--accent-violet)" },
-    { t: "14m", hash: "e4c3a88", msg: "pipeline: self-critic caught over-confidence on fold #146", tag: "critic", color: "var(--accent-amber)" },
-    { t: "1h", hash: "c10b05d", msg: "NB-FIBRE-03: simulation @ shear rate 500s⁻¹ — stable", tag: "sim", color: "var(--accent-mint)" },
-    { t: "3h", hash: "0ff22a4", msg: "ingest: 17 new papers from NeurIPS bio-track", tag: "ingest", color: "var(--accent-blue)" },
-    { t: "6h", hash: "9ae8721", msg: "NB-GEL-02: Tm reduced 72 → 65°C after redesign", tag: "design", color: "var(--accent-violet)" },
-    { t: "9h", hash: "3d7c5a1", msg: "bench: gene synthesis order placed for NB-IRON-07", tag: "synth", color: "var(--accent-mint)" },
-    { t: "12h", hash: "b12fe09", msg: "dataset: OpenBio-Nutrition v0.3 pushed", tag: "data", color: "var(--accent-pink)" },
+    { t: "2m", hash: "7ab91f2", msg: "NB-IRON-07: dock score improved −11.3 → −12.1", tag: "design" },
+    { t: "14m", hash: "e4c3a88", msg: "pipeline: self-critic caught over-confidence on fold #146", tag: "critic" },
+    { t: "1h", hash: "c10b05d", msg: "NB-FIBRE-03: simulation @ shear rate 500s⁻¹ — stable", tag: "sim" },
+    { t: "3h", hash: "0ff22a4", msg: "ingest: 17 new papers from NeurIPS bio-track", tag: "ingest" },
+    { t: "6h", hash: "9ae8721", msg: "NB-GEL-02: Tm reduced 72 → 65°C after redesign", tag: "design" },
+    { t: "9h", hash: "3d7c5a1", msg: "bench: gene synthesis order placed for NB-IRON-07", tag: "synth" },
+    { t: "12h", hash: "b12fe09", msg: "dataset: OpenBio-Nutrition v0.3 pushed", tag: "data" },
   ];
 
   return (
     <div className="relative overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg)] shadow-sm">
       <div className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface)] px-4 py-2.5">
         <div className="flex items-center gap-2">
-          <span
-            className="pulse-dot inline-block h-1.5 w-1.5 rounded-full"
-            style={{ background: "var(--accent-mint)" }}
-          />
+          <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
           <span className="font-mono text-[11px] tracking-[0.14em] text-[var(--text-dim)] uppercase">
             null-bites/pipeline · main
           </span>
@@ -92,15 +90,9 @@ function CommitStream() {
             <span className="text-[var(--text-muted)] tabular-nums">
               {r.t.padStart(3, " ")} ago
             </span>
-            <span style={{ color: r.color }}>{r.hash}</span>
+            <span className="text-[var(--accent)]">{r.hash}</span>
             <span className="truncate text-[var(--text-dim)]">{r.msg}</span>
-            <span
-              className="rounded border px-1.5 py-0.5 text-[10px] tracking-[0.1em] uppercase"
-              style={{
-                borderColor: "var(--border)",
-                color: r.color,
-              }}
-            >
+            <span className="rounded border border-[var(--border)] px-1.5 py-0.5 text-[10px] tracking-[0.1em] text-[var(--text-muted)] uppercase">
               {r.tag}
             </span>
           </li>

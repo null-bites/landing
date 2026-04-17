@@ -1,11 +1,11 @@
 export function LoopDiagram() {
   const steps = [
-    { id: "01", label: "Ingest", sub: "LLM reader", color: "var(--accent-blue)" },
-    { id: "02", label: "Design", sub: "ProteinMPNN", color: "var(--accent-violet)" },
-    { id: "03", label: "Fold", sub: "ESMFold", color: "var(--accent-pink)" },
-    { id: "04", label: "Rank", sub: "Self-critic", color: "var(--accent-amber)" },
-    { id: "05", label: "Synth.", sub: "Gene · E.coli", color: "var(--accent-mint)" },
-    { id: "06", label: "Eat", sub: "Wet lab", color: "var(--accent)" },
+    { id: "01", label: "Ingest", sub: "LLM reader" },
+    { id: "02", label: "Design", sub: "ProteinMPNN" },
+    { id: "03", label: "Fold", sub: "ESMFold" },
+    { id: "04", label: "Rank", sub: "Self-critic" },
+    { id: "05", label: "Bench", sub: "Gene · E.coli" },
+    { id: "06", label: "Product", sub: "Formulate · eat" },
   ];
 
   const cx = 260;
@@ -17,7 +17,6 @@ export function LoopDiagram() {
     y: cy + r * Math.sin(a),
   }));
 
-  // Arc paths connecting consecutive points (clockwise)
   const arcs = pts.map((p, i) => {
     const next = pts[(i + 1) % pts.length];
     return `M ${p.x} ${p.y} A ${r} ${r} 0 0 1 ${next.x} ${next.y}`;
@@ -25,22 +24,12 @@ export function LoopDiagram() {
 
   return (
     <div className="relative mx-auto aspect-square w-full max-w-[520px]">
-      <svg
-        viewBox="0 0 520 520"
-        className="h-full w-full"
-        aria-hidden
-      >
+      <svg viewBox="0 0 520 520" className="h-full w-full" aria-hidden>
         <defs>
           <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="var(--accent-violet)" stopOpacity="0.28" />
-            <stop offset="70%" stopColor="var(--accent-violet)" stopOpacity="0" />
+            <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.22" />
+            <stop offset="70%" stopColor="var(--accent)" stopOpacity="0" />
           </radialGradient>
-          <linearGradient id="orbit-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="var(--accent-blue)" />
-            <stop offset="33%" stopColor="var(--accent-violet)" />
-            <stop offset="66%" stopColor="var(--accent-pink)" />
-            <stop offset="100%" stopColor="var(--accent-mint)" />
-          </linearGradient>
           <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="3" />
           </filter>
@@ -59,7 +48,7 @@ export function LoopDiagram() {
             stroke="var(--border-strong)"
             strokeWidth="1"
             strokeDasharray="2 10"
-            opacity="0.6"
+            opacity="0.5"
           />
         </g>
 
@@ -76,10 +65,11 @@ export function LoopDiagram() {
             <path
               d={d}
               fill="none"
-              stroke="url(#orbit-grad)"
-              strokeWidth="2"
+              stroke="var(--accent)"
+              strokeWidth="1.75"
               strokeDasharray="6 10"
               strokeLinecap="round"
+              opacity="0.85"
               className="flow-dash"
               style={{ animationDelay: `${i * -0.35}s` }}
             />
@@ -100,11 +90,11 @@ export function LoopDiagram() {
             cx={cx}
             cy={cy}
             r="12"
-            fill="var(--accent-violet)"
+            fill="var(--accent)"
             className="pulse-dot"
             filter="url(#soft-glow)"
           />
-          <circle cx={cx} cy={cy} r="5" fill="var(--accent-violet)" />
+          <circle cx={cx} cy={cy} r="5" fill="var(--accent)" />
           <text
             x={cx}
             y={cy + 34}
@@ -123,24 +113,22 @@ export function LoopDiagram() {
           const s = steps[i];
           return (
             <g key={s.id}>
-              {/* Node circle */}
               <circle
                 cx={p.x}
                 cy={p.y}
                 r="30"
                 fill="var(--bg)"
-                stroke={s.color}
-                strokeWidth="1.5"
+                stroke="var(--accent)"
+                strokeWidth="1.25"
               />
               <circle
                 cx={p.x}
                 cy={p.y}
                 r="6"
-                fill={s.color}
+                fill="var(--accent)"
                 className="pulse-dot"
                 style={{ animationDelay: `${i * 0.3}s` }}
               />
-              {/* Label — position outside the ring */}
               <g>
                 <text
                   x={p.x + Math.cos(angles[i]) * 52}

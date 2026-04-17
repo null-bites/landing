@@ -11,13 +11,13 @@ export function Nav() {
         </Link>
         <div className="flex items-center gap-6 text-[13px] text-[var(--text-dim)]">
           <Link href="#science" className="hover:text-[var(--text)] transition">
-            Science
+            Thesis
           </Link>
           <Link href="#pipeline" className="hover:text-[var(--text)] transition">
             Pipeline
           </Link>
-          <Link href="#designs" className="hover:text-[var(--text)] transition">
-            Designs
+          <Link href="#products" className="hover:text-[var(--text)] transition">
+            Products
           </Link>
           <a
             href="https://github.com/null-bites"

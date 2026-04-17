@@ -6,13 +6,13 @@ export function Thesis() {
     >
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <p className="label mb-4">01 · The idea</p>
+          <p className="label mb-4">01 · The thesis</p>
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             AlphaFold cracked protein structure in 2020. Billions went to
             pharma.{" "}
-            <em className="rainbow-text not-italic font-normal">
+            <span className="accent-text font-normal">
               Nutrition got nothing.
-            </em>
+            </span>
           </h2>
         </div>
 
@@ -34,10 +34,13 @@ export function Thesis() {
             candidate against real constraints, and iterates on its own.
           </p>
           <p>
-            Five designs are ready for wet-lab testing. They target
-            plant-based iron binding, protein texture, and fibrous structures
-            that don&apos;t exist in any organism today. The target: a complete
-            protein product you can take a bite out of.
+            Our designs don&apos;t stop at a .pdb file. Each top candidate goes
+            to the bench, into a fermenter, and out the other side as an
+            ingredient formulated into a{" "}
+            <span className="text-[var(--text)]">real product</span> — for
+            performance, recovery, fortification, gut health, or plant-based
+            whole foods. The benchmark is simple: you pick it up, you bite
+            into it.
           </p>
         </div>
       </div>
@@ -46,19 +49,16 @@ export function Thesis() {
         <Stat
           kicker="Ignored for"
           value="5 years"
-          color="var(--accent-violet)"
           detail="Since AlphaFold 2, every computational biology dollar chased therapeutics."
         />
         <Stat
           kicker="Agriculture uses"
           value="70%"
-          color="var(--accent-mint)"
           detail="…of global freshwater. And still can&rsquo;t scale to 10B people."
         />
         <Stat
-          kicker="Teams building food from first principles"
+          kicker="Biocomputation companies shipping food"
           value="1"
-          color="var(--accent-blue)"
           detail="We&rsquo;re the only one pointing these tools at what you eat."
         />
       </div>
@@ -70,20 +70,15 @@ function Stat({
   kicker,
   value,
   detail,
-  color,
 }: {
   kicker: string;
   value: string;
   detail: string;
-  color: string;
 }) {
   return (
     <div className="bg-[var(--bg)] p-8">
       <p className="label">{kicker}</p>
-      <p
-        className="mt-3 font-mono text-4xl font-light tracking-tight"
-        style={{ color }}
-      >
+      <p className="mt-3 font-mono text-4xl font-light tracking-tight text-[var(--accent)]">
         {value}
       </p>
       <p

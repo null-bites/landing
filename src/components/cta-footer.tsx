@@ -10,11 +10,9 @@ export function CtaFooter() {
           <div>
             <p className="label mb-4">05 · Get in touch</p>
             <h2 className="text-balance text-3xl font-light leading-[1.05] tracking-[-0.025em] text-[var(--text)] sm:text-5xl lg:text-6xl">
-              Building with us.
+              Manufacturing with us.
               <br />
-              <span className="rainbow-text font-normal">
-                Eating with us.
-              </span>
+              <span className="accent-text font-normal">Eating with us.</span>
               <br />
               Investing in us.
             </h2>
@@ -43,8 +41,8 @@ export function CtaFooter() {
               </span>
             </div>
             <p className="mt-4 leading-relaxed">
-              Nutrition, computationally designed. Built for a future that can
-              feed ten billion.
+              A biocomputation company building nutrition products. For a
+              future that can feed ten billion.
             </p>
           </div>
           <div>
@@ -55,7 +53,7 @@ export function CtaFooter() {
                   href="#science"
                   className="hover:text-[var(--text)] transition"
                 >
-                  Science
+                  Thesis
                 </a>
               </li>
               <li>
@@ -68,10 +66,10 @@ export function CtaFooter() {
               </li>
               <li>
                 <a
-                  href="#designs"
+                  href="#products"
                   className="hover:text-[var(--text)] transition"
                 >
-                  Designs
+                  Products
                 </a>
               </li>
             </ul>
