@@ -98,10 +98,10 @@ export default function ProteinViewer({
 
       const cartoonStyle = {
         opacity: 1.0,
-        thickness: 0.55,
+        thickness: 0.8,
+        tubes: true,
         arrows: true,
         quality: 12,
-        ribbon: true,
         smoothSheet: true,
       };
 
