@@ -7,6 +7,7 @@ type Design = {
   summary: string;
   metrics: { label: string; value: string }[];
   accent: string;
+  mode: "solid" | "spectrum";
 };
 
 const designs: Design[] = [
@@ -21,7 +22,8 @@ const designs: Design[] = [
       { label: "ΔG", value: "−11.3" },
       { label: "Tm", value: "78 °C" },
     ],
-    accent: "#E8B76B",
+    accent: "var(--accent-violet)",
+    mode: "spectrum",
   },
   {
     codename: "NB-FIBRE-03",
@@ -34,7 +36,8 @@ const designs: Design[] = [
       { label: "ΔG", value: "−9.7" },
       { label: "Tm", value: "72 °C" },
     ],
-    accent: "#7CF5A6",
+    accent: "var(--accent-mint)",
+    mode: "spectrum",
   },
   {
     codename: "NB-GEL-02",
@@ -47,7 +50,8 @@ const designs: Design[] = [
       { label: "ΔG", value: "−10.1" },
       { label: "Tm", value: "65 °C" },
     ],
-    accent: "#7AA8FF",
+    accent: "var(--accent-blue)",
+    mode: "spectrum",
   },
 ];
 
@@ -58,10 +62,13 @@ export function Designs() {
       className="relative mx-auto w-full max-w-7xl px-6 py-32 lg:px-10"
     >
       <div className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div>
+        <div className="max-w-2xl">
           <p className="label mb-4">03 · The designs</p>
-          <h2 className="text-balance text-3xl font-medium leading-tight tracking-[-0.02em] text-[var(--text)] sm:text-4xl">
-            Five proteins. None of them have ever existed.
+          <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
+            Five proteins.{" "}
+            <em className="rainbow-text not-italic font-normal">
+              None of them have ever existed.
+            </em>
           </h2>
         </div>
         <p className="max-w-sm text-[15px] text-[var(--text-dim)]">
@@ -74,20 +81,24 @@ export function Designs() {
         {designs.map((d, i) => (
           <article
             key={d.codename}
-            className="group relative flex flex-col overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] transition hover:border-[var(--border-strong)]"
+            className="group relative flex flex-col overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] transition hover:border-[var(--border-strong)]"
           >
-            <div className="relative aspect-[4/3] border-b border-[var(--border)] bg-[var(--surface-2)]">
+            <div className="relative aspect-[4/3] border-b border-[var(--border)] bg-[var(--bg)]">
               <div className="absolute inset-0 viewer-mask">
                 <ProteinViewer
                   pdbId={d.pdbId}
                   accent={d.accent}
+                  mode={d.mode}
                   spinSpeed={0.2 + i * 0.05}
                   zoom={1.0}
                 />
               </div>
               <div className="absolute left-4 top-4 flex items-center gap-2">
-                <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
-                <span className="font-mono text-[11px] tracking-[0.16em] text-[var(--text-dim)] uppercase">
+                <span
+                  className="pulse-dot inline-block h-1.5 w-1.5 rounded-full"
+                  style={{ background: "var(--accent-mint)" }}
+                />
+                <span className="font-mono text-[11px] tracking-[0.16em] text-[var(--text-muted)] uppercase">
                   live · rotating
                 </span>
               </div>
@@ -100,7 +111,10 @@ export function Designs() {
 
             <div className="flex flex-1 flex-col p-6">
               <div className="flex items-center justify-between">
-                <h3 className="font-mono text-[15px] tracking-tight text-[var(--accent)]">
+                <h3
+                  className="font-mono text-[15px] tracking-tight"
+                  style={{ color: d.accent }}
+                >
                   {d.codename}
                 </h3>
                 <span className="label">CANDIDATE</span>

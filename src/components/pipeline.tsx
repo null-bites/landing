@@ -1,3 +1,5 @@
+import { LoopDiagram } from "./loop-diagram";
+
 export function Pipeline() {
   const steps: Array<{
     id: string;
@@ -56,12 +58,13 @@ export function Pipeline() {
     >
       <div className="mx-auto w-full max-w-7xl px-6 py-32 lg:px-10">
         <div className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <div>
+          <div className="max-w-2xl">
             <p className="label mb-4">02 · The loop</p>
-            <h2 className="text-balance text-3xl font-medium leading-tight tracking-[-0.02em] text-[var(--text)] sm:text-4xl">
+            <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
               A closed loop from{" "}
-              <span className="text-[var(--accent)]">a paper</span> to{" "}
-              <span className="text-[var(--accent)]">a bite</span>.
+              <em className="rainbow-text not-italic font-normal">a paper</em>{" "}
+              to{" "}
+              <em className="rainbow-text not-italic font-normal">a bite</em>.
             </h2>
           </div>
           <p className="max-w-sm text-[15px] text-[var(--text-dim)]">
@@ -70,45 +73,48 @@ export function Pipeline() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2 lg:grid-cols-3">
-          {steps.map((s) => (
-            <div
-              key={s.id}
-              className="group relative flex flex-col gap-4 bg-[var(--surface-2)] p-6 transition hover:bg-[var(--surface)]"
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[13px] text-[var(--text-muted)]">
+        {/* Split layout: animated diagram + step list */}
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="order-last lg:order-first">
+            <LoopDiagram />
+          </div>
+
+          <ol className="flex flex-col divide-y divide-[var(--border)] border-y border-[var(--border)] bg-[var(--bg)]">
+            {steps.map((s) => (
+              <li
+                key={s.id}
+                className="group grid grid-cols-[auto_1fr_auto] items-start gap-4 px-5 py-5"
+              >
+                <span className="font-mono text-[12px] tracking-[0.14em] text-[var(--text-muted)]">
                   {s.id}
                 </span>
-                <span className="font-mono text-[11px] tracking-[0.14em] text-[var(--accent)] opacity-70 uppercase">
+                <div>
+                  <h3 className="text-[17px] font-medium tracking-tight text-[var(--text)]">
+                    {s.label}
+                  </h3>
+                  <p className="mt-1 text-[13.5px] leading-relaxed text-[var(--text-dim)]">
+                    {s.detail}
+                  </p>
+                </div>
+                <span className="hidden font-mono text-[10px] tracking-[0.16em] text-[var(--accent)] opacity-80 sm:inline uppercase whitespace-nowrap">
                   {s.tech}
                 </span>
-              </div>
-              <h3 className="text-2xl font-medium tracking-tight text-[var(--text)]">
-                {s.label}
-              </h3>
-              <p className="text-[14px] leading-relaxed text-[var(--text-dim)]">
-                {s.detail}
-              </p>
-              <span
-                aria-hidden
-                className="absolute right-0 top-0 h-px w-0 bg-[var(--accent)] transition-all duration-500 group-hover:w-full"
-              />
-            </div>
-          ))}
+              </li>
+            ))}
+          </ol>
         </div>
 
         <div className="mt-10 flex flex-wrap items-center gap-6 text-[13px] text-[var(--text-dim)]">
           <span className="flex items-center gap-2">
-            <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+            <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-mint)]" />
             <span className="font-mono">pipeline: running</span>
           </span>
           <span className="flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--iron)]" />
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-amber)]" />
             <span className="font-mono">designs/hour: 12–18</span>
           </span>
           <span className="flex items-center gap-2">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--cobalt)]" />
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-[var(--accent-blue)]" />
             <span className="font-mono">last cycle: 2 min ago</span>
           </span>
         </div>

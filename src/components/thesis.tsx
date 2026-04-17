@@ -7,9 +7,12 @@ export function Thesis() {
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <p className="label mb-4">01 · The idea</p>
-          <h2 className="text-balance text-3xl font-medium leading-tight tracking-[-0.02em] text-[var(--text)] sm:text-4xl">
+          <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             AlphaFold cracked protein structure in 2020. Billions went to
-            pharma. Nutrition got nothing.
+            pharma.{" "}
+            <em className="rainbow-text not-italic font-normal">
+              Nutrition got nothing.
+            </em>
           </h2>
         </div>
 
@@ -43,16 +46,19 @@ export function Thesis() {
         <Stat
           kicker="Ignored for"
           value="5 years"
+          color="var(--accent-violet)"
           detail="Since AlphaFold 2, every computational biology dollar chased therapeutics."
         />
         <Stat
           kicker="Agriculture uses"
           value="70%"
+          color="var(--accent-mint)"
           detail="…of global freshwater. And still can&rsquo;t scale to 10B people."
         />
         <Stat
           kicker="Teams building food from first principles"
           value="1"
+          color="var(--accent-blue)"
           detail="We&rsquo;re the only one pointing these tools at what you eat."
         />
       </div>
@@ -64,15 +70,20 @@ function Stat({
   kicker,
   value,
   detail,
+  color,
 }: {
   kicker: string;
   value: string;
   detail: string;
+  color: string;
 }) {
   return (
-    <div className="bg-[var(--surface)] p-8">
+    <div className="bg-[var(--bg)] p-8">
       <p className="label">{kicker}</p>
-      <p className="mt-3 font-mono text-4xl font-medium tracking-tight text-[var(--accent)]">
+      <p
+        className="mt-3 font-mono text-4xl font-light tracking-tight"
+        style={{ color }}
+      >
         {value}
       </p>
       <p

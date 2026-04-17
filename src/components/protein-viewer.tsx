@@ -9,15 +9,23 @@ type Props = {
   className?: string;
   spinSpeed?: number;
   zoom?: number;
+  /**
+   * "solid" = single-color cartoon using `accent`.
+   * "spectrum" = rainbow N→C terminus (violet → blue → green → yellow → red).
+   */
+  mode?: 'solid' | 'spectrum';
+  showSurface?: boolean;
 };
 
 export default function ProteinViewer({
   pdbId = '1HHO',
-  accent = '#7CF5A6',
+  accent = '#7C5CFF',
   surfaceAccent,
   className = '',
   spinSpeed = 0.25,
   zoom = 1.05,
+  mode = 'solid',
+  showSurface = true,
 }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<unknown>(null);
@@ -59,10 +67,35 @@ export default function ProteinViewer({
       if (cancelled) return;
 
       viewer.addModel(pdb, 'pdb');
-      viewer.setStyle({}, {
-        cartoon: { color: accent, opacity: 1.0, thickness: 0.6, arrows: true },
-      });
-      viewer.addSurface(2, { opacity: 0.22, color: surfaceAccent ?? accent });
+
+      if (mode === 'spectrum') {
+        viewer.setStyle(
+          {},
+          {
+            cartoon: {
+              colorscheme: { prop: 'resi', gradient: 'roygb' },
+              opacity: 1.0,
+              thickness: 0.6,
+              arrows: true,
+            },
+          },
+        );
+        if (showSurface) {
+          viewer.addSurface(2, {
+            opacity: 0.14,
+            colorscheme: { prop: 'resi', gradient: 'roygb' },
+          });
+        }
+      } else {
+        viewer.setStyle(
+          {},
+          { cartoon: { color: accent, opacity: 1.0, thickness: 0.6, arrows: true } },
+        );
+        if (showSurface) {
+          viewer.addSurface(2, { opacity: 0.18, color: surfaceAccent ?? accent });
+        }
+      }
+
       viewer.zoomTo();
       viewer.zoom(zoom);
       viewer.spin('y', spinSpeed);
@@ -86,7 +119,7 @@ export default function ProteinViewer({
         /* noop */
       }
     };
-  }, [pdbId, accent, surfaceAccent, spinSpeed, zoom]);
+  }, [pdbId, accent, surfaceAccent, spinSpeed, zoom, mode, showSurface]);
 
   return (
     <div

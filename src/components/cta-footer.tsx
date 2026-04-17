@@ -4,15 +4,17 @@ export function CtaFooter() {
       <section className="relative overflow-hidden border-t border-[var(--border)]">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 grid-dots opacity-50"
+          className="pointer-events-none absolute inset-0 -z-10 grid-dots opacity-60"
         />
         <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-10 px-6 py-28 lg:flex-row lg:items-end lg:justify-between lg:px-10">
           <div>
             <p className="label mb-4">05 · Get in touch</p>
-            <h2 className="text-balance text-3xl font-medium leading-tight tracking-[-0.02em] text-[var(--text)] sm:text-5xl lg:text-6xl">
+            <h2 className="text-balance text-3xl font-light leading-[1.05] tracking-[-0.025em] text-[var(--text)] sm:text-5xl lg:text-6xl">
               Building with us.
               <br />
-              <span className="text-[var(--accent)]">Eating with us.</span>
+              <span className="rainbow-text font-normal">
+                Eating with us.
+              </span>
               <br />
               Investing in us.
             </h2>
@@ -20,7 +22,7 @@ export function CtaFooter() {
           <div className="flex flex-col gap-3">
             <a
               href="mailto:founders@nullbites.com"
-              className="inline-flex items-center gap-3 rounded-md bg-[var(--accent)] px-6 py-4 text-[15px] font-medium text-[#06180f] transition hover:brightness-110"
+              className="inline-flex items-center gap-3 rounded-md bg-[var(--text)] px-6 py-4 text-[15px] font-medium text-[var(--bg)] transition hover:bg-[var(--accent)]"
             >
               founders@nullbites.com
               <span aria-hidden>→</span>
@@ -36,10 +38,6 @@ export function CtaFooter() {
         <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-12 text-[13px] text-[var(--text-dim)] sm:grid-cols-2 lg:grid-cols-4 lg:px-10">
           <div>
             <div className="flex items-center gap-2">
-              <span
-                aria-hidden
-                className="inline-block h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent-glow)]"
-              />
               <span className="text-[14px] font-medium text-[var(--text)]">
                 Null Bites
               </span>
