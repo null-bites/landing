@@ -1,9 +1,4 @@
-import dynamic from "next/dynamic";
-
-const ProteinViewer = dynamic(() => import("./protein-viewer"), {
-  ssr: false,
-  loading: () => <div className="h-full w-full" />,
-});
+import ProteinViewer from "./protein-viewer";
 
 export function Hero() {
   return (
