@@ -17,7 +17,7 @@ const designs: Design[] = [
     category: "Fortification",
     product: "Iron-dense protein bar",
     summary:
-      "Heme-mimic fold that chelates Fe²⁺ from leafy inputs — animal-source bioavailability, zero animal.",
+      "Heme-mimic fold that chelates Fe²⁺ from leafy inputs. Animal-source bioavailability, zero animal.",
     metrics: [
       { label: "pLDDT", value: "94.2" },
       { label: "ΔG", value: "−11.3" },
@@ -31,7 +31,7 @@ const designs: Design[] = [
     category: "Plant-based meat",
     product: "Fibrous whole-muscle analogue",
     summary:
-      "Long coiled-coil engineered to self-assemble into aligned fibres under shear — the missing chew.",
+      "Long coiled-coil engineered to self-assemble into aligned fibres under shear. The missing chew.",
     metrics: [
       { label: "pLDDT", value: "91.8" },
       { label: "ΔG", value: "−9.7" },
@@ -45,7 +45,7 @@ const designs: Design[] = [
     category: "Egg replacement",
     product: "Heat-set bake gel",
     summary:
-      "Ovalbumin-inspired scaffold tuned for lower set temps — gels like egg, without touching a hen.",
+      "Ovalbumin-inspired scaffold tuned for lower set temps. Gels like egg, without touching a hen.",
     metrics: [
       { label: "pLDDT", value: "89.4" },
       { label: "ΔG", value: "−10.1" },
@@ -88,7 +88,7 @@ export function Designs() {
                 <ProteinViewer
                   pdbId={d.pdbId}
                   accent={d.color}
-                  mode="solid"
+                  mode="spectrum"
                   spinSpeed={0.2 + i * 0.05}
                   zoom={1.0}
                 />

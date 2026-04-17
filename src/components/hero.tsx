@@ -3,15 +3,14 @@ import ProteinViewer from "./protein-viewer";
 export function Hero() {
   return (
     <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden pt-24">
-      {/* Solid-copper protein showcase — right side */}
+      {/* Colorful spectrum protein showcase — right side */}
       <div
         aria-hidden
         className="absolute inset-y-0 right-[-8%] w-[65%] viewer-mask opacity-95 lg:w-[55%]"
       >
         <ProteinViewer
           pdbId="1HHO"
-          mode="solid"
-          accent="#C4521B"
+          mode="spectrum"
           spinSpeed={0.25}
           zoom={1.2}
         />
@@ -37,7 +36,7 @@ export function Hero() {
             Null Bites is a{" "}
             <span className="text-[var(--text)]">biocomputation company</span>{" "}
             building nutrition products. We write novel food-grade proteins
-            from first principles — and turn them into things you can eat.
+            from first principles, then turn them into things you can eat.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -60,12 +59,6 @@ export function Hero() {
               Read the thesis
             </a>
           </div>
-
-          <div className="mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-[var(--border)] pt-6">
-            <Metric kicker="Papers ingested" value="1,419" />
-            <Metric kicker="Self-correction cycles" value="146" />
-            <Metric kicker="Lead designs" value="5" />
-          </div>
         </div>
       </div>
 
@@ -75,16 +68,5 @@ export function Hero() {
         className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[var(--bg)]"
       />
     </section>
-  );
-}
-
-function Metric({ kicker, value }: { kicker: string; value: string }) {
-  return (
-    <div className="flex flex-col gap-1">
-      <span className="label">{kicker}</span>
-      <span className="font-mono text-2xl font-light tracking-tight text-[var(--text)]">
-        {value}
-      </span>
-    </div>
   );
 }

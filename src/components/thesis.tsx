@@ -34,18 +34,18 @@ export function Thesis() {
             candidate against real constraints, and iterates on its own.
           </p>
           <p>
-            Our designs don&apos;t stop at a .pdb file. Each top candidate goes
-            to the bench, into a fermenter, and out the other side as an
+            Our designs don&apos;t stop at a .pdb file. Each top candidate
+            goes to the bench, into a fermenter, and out the other side as an
             ingredient formulated into a{" "}
-            <span className="text-[var(--text)]">real product</span> — for
-            performance, recovery, fortification, gut health, or plant-based
+            <span className="text-[var(--text)]">real product</span>.
+            Performance, recovery, fortification, gut health, plant-based
             whole foods. The benchmark is simple: you pick it up, you bite
             into it.
           </p>
         </div>
       </div>
 
-      <div className="mt-16 grid gap-px overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--border)] sm:grid-cols-3">
+      <div className="mt-16 grid gap-px overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--border)] sm:grid-cols-2">
         <Stat
           kicker="Ignored for"
           value="5 years"
@@ -55,11 +55,6 @@ export function Thesis() {
           kicker="Agriculture uses"
           value="70%"
           detail="…of global freshwater. And still can&rsquo;t scale to 10B people."
-        />
-        <Stat
-          kicker="Biocomputation companies shipping food"
-          value="1"
-          detail="We&rsquo;re the only one pointing these tools at what you eat."
         />
       </div>
     </section>
