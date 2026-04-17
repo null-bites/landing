@@ -3,11 +3,21 @@ import ProteinViewer from "./protein-viewer";
 export function Hero() {
   return (
     <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden pt-24">
-      {/* Colorful spectrum protein showcase — right side */}
+      {/* Colorful spectrum protein showcase — right side, editorial panel */}
       <div
         aria-hidden
-        className="viewer-glow absolute inset-y-0 right-[-8%] w-[65%] lg:w-[55%]"
+        className="viewer-glow absolute inset-y-0 right-[-8%] w-[65%] lg:w-[55%] lg:border-l lg:border-[var(--border)]"
       >
+        {/* Panel label at top of viewer column */}
+        <div className="hidden absolute left-4 top-8 z-10 lg:block">
+          <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] text-[var(--text-muted)] uppercase">
+            <span className="h-px w-6 bg-[var(--border-strong)]" />
+            <span>PDB · 1HHO</span>
+          </div>
+          <div className="mt-1 font-mono text-[10px] tracking-[0.18em] text-[var(--text-muted)] uppercase pl-8">
+            hemoglobin · 141 aa
+          </div>
+        </div>
         <div className="viewer-mask absolute inset-0 opacity-95">
           <ProteinViewer
             pdbId="1HHO"
