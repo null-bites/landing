@@ -58,6 +58,7 @@ export default function ProteinViewer({
 
       const viewer = api.createViewer(hostRef.current, {
         backgroundColor: 'rgba(0,0,0,0)',
+        backgroundAlpha: 0,
         antialias: true,
       });
       viewerRef.current = viewer;
@@ -73,7 +74,7 @@ export default function ProteinViewer({
           {},
           {
             cartoon: {
-              colorscheme: { prop: 'resi', gradient: 'roygb' },
+              color: 'spectrum',
               opacity: 1.0,
               thickness: 0.6,
               arrows: true,
@@ -83,7 +84,7 @@ export default function ProteinViewer({
         if (showSurface) {
           viewer.addSurface(2, {
             opacity: 0.14,
-            colorscheme: { prop: 'resi', gradient: 'roygb' },
+            color: 'spectrum',
           });
         }
       } else {
