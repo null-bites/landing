@@ -59,8 +59,10 @@ export default function ProteinViewer({
       if (cancelled) return;
 
       viewer.addModel(pdb, 'pdb');
-      viewer.setStyle({}, { cartoon: { color: accent, opacity: 0.95 } });
-      viewer.addSurface(2, { opacity: 0.1, color: surfaceAccent ?? accent });
+      viewer.setStyle({}, {
+        cartoon: { color: accent, opacity: 1.0, thickness: 0.6, arrows: true },
+      });
+      viewer.addSurface(2, { opacity: 0.22, color: surfaceAccent ?? accent });
       viewer.zoomTo();
       viewer.zoom(zoom);
       viewer.spin('y', spinSpeed);

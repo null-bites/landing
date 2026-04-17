@@ -3,12 +3,12 @@ import ProteinViewer from "./protein-viewer";
 export function Hero() {
   return (
     <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden pt-24">
-      {/* Protein viewer background */}
+      {/* Protein viewer — right-side showcase, full opacity, subtle vignette */}
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 viewer-mask opacity-75"
+        className="absolute inset-y-0 right-[-8%] w-[65%] viewer-mask opacity-90 lg:w-[55%]"
       >
-        <ProteinViewer pdbId="1HHO" accent="#7CF5A6" spinSpeed={0.25} />
+        <ProteinViewer pdbId="1HHO" accent="#7CF5A6" spinSpeed={0.25} zoom={1.2} />
       </div>
 
       {/* Dot grid over the gradient */}
