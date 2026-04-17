@@ -17,6 +17,18 @@ type Props = {
   showSurface?: boolean;
 };
 
+type Viewer = {
+  addModel: (data: string, fmt: string) => void;
+  setStyle: (sel: object, style: object) => void;
+  addSurface: (type: number, style: object) => void;
+  zoomTo: () => void;
+  zoom: (f: number) => void;
+  spin: (axis: string, speed: number) => void;
+  render: () => void;
+  resize: () => void;
+  clear: () => void;
+};
+
 export default function ProteinViewer({
   pdbId = '1HHO',
   accent = '#7C5CFF',
@@ -28,11 +40,31 @@ export default function ProteinViewer({
   showSurface = true,
 }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
-  const viewerRef = useRef<unknown>(null);
+  const viewerRef = useRef<Viewer | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     let ro: ResizeObserver | null = null;
+
+    const host = hostRef.current;
+    if (!host) return;
+
+    const dpr = Math.min(
+      typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1,
+      3,
+    );
+
+    const applyHd = () => {
+      const canvas = host.querySelector<HTMLCanvasElement>('canvas');
+      if (!canvas) return;
+      const w = canvas.clientWidth || host.clientWidth;
+      const h = canvas.clientHeight || host.clientHeight;
+      if (!w || !h) return;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      canvas.style.width = `${w}px`;
+      canvas.style.height = `${h}px`;
+    };
 
     (async () => {
       const mod = await import('3dmol/build/3Dmol.js');
@@ -43,25 +75,20 @@ export default function ProteinViewer({
         createViewer: (
           el: HTMLElement,
           cfg: Record<string, unknown>,
-        ) => {
-          addModel: (data: string, fmt: string) => void;
-          setStyle: (sel: object, style: object) => void;
-          addSurface: (type: number, style: object) => void;
-          zoomTo: () => void;
-          zoom: (f: number) => void;
-          spin: (axis: string, speed: number) => void;
-          render: () => void;
-          resize: () => void;
-          clear: () => void;
-        };
+        ) => Viewer;
       };
 
       const viewer = api.createViewer(hostRef.current, {
         backgroundColor: 'rgba(0,0,0,0)',
         backgroundAlpha: 0,
         antialias: true,
+        hd: true,
       });
       viewerRef.current = viewer;
+
+      // Scale the underlying canvas backing store to devicePixelRatio so
+      // ribbons render crisp on Retina instead of pixelated.
+      if (dpr > 1) applyHd();
 
       const res = await fetch(`https://files.rcsb.org/download/${pdbId}.pdb`);
       const pdb = await res.text();
@@ -69,31 +96,30 @@ export default function ProteinViewer({
 
       viewer.addModel(pdb, 'pdb');
 
+      const cartoonStyle = {
+        opacity: 1.0,
+        thickness: 0.55,
+        arrows: true,
+        quality: 12,
+        ribbon: true,
+        smoothSheet: true,
+      };
+
       if (mode === 'spectrum') {
         viewer.setStyle(
           {},
-          {
-            cartoon: {
-              color: 'spectrum',
-              opacity: 1.0,
-              thickness: 0.6,
-              arrows: true,
-            },
-          },
+          { cartoon: { ...cartoonStyle, color: 'spectrum' } },
         );
         if (showSurface) {
-          viewer.addSurface(2, {
-            opacity: 0.14,
-            color: 'spectrum',
-          });
+          viewer.addSurface(2, { opacity: 0.14, color: 'spectrum' });
         }
       } else {
-        viewer.setStyle(
-          {},
-          { cartoon: { color: accent, opacity: 1.0, thickness: 0.6, arrows: true } },
-        );
+        viewer.setStyle({}, { cartoon: { ...cartoonStyle, color: accent } });
         if (showSurface) {
-          viewer.addSurface(2, { opacity: 0.18, color: surfaceAccent ?? accent });
+          viewer.addSurface(2, {
+            opacity: 0.18,
+            color: surfaceAccent ?? accent,
+          });
         }
       }
 
@@ -103,8 +129,9 @@ export default function ProteinViewer({
       viewer.render();
 
       ro = new ResizeObserver(() => {
-        const v = viewerRef.current as { resize: () => void } | null;
-        v?.resize();
+        viewerRef.current?.resize();
+        if (dpr > 1) applyHd();
+        viewerRef.current?.render();
       });
       ro.observe(hostRef.current);
     })();
@@ -113,8 +140,7 @@ export default function ProteinViewer({
       cancelled = true;
       ro?.disconnect();
       try {
-        const v = viewerRef.current as { clear: () => void } | null;
-        v?.clear();
+        viewerRef.current?.clear();
         viewerRef.current = null;
       } catch {
         /* noop */
