@@ -199,35 +199,18 @@ body {
 }
 .spin-slow { animation: spin-slow 60s linear infinite; }
 
-/* Simple one-shot fade on view — quick and GPU-cheap (opacity only) */
-@keyframes reveal-fade {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.reveal {
-  opacity: 1;
-}
-
-@supports (animation-timeline: view()) {
-  .reveal {
-    opacity: 0;
-    animation: reveal-fade both ease-out;
-    animation-timeline: view();
-    animation-range: entry 0% cover 12%;
-  }
-}
-
+/* IntersectionObserver-driven one-shot reveal — stable on fast scrolls.
+   Elements start invisible and stay visible once shown; scrolling back up
+   does NOT reverse the animation (unlike animation-timeline: view()). */
+.reveal,
 .reveal-stagger > * {
-  opacity: 1;
+  opacity: 0;
+  transition: opacity 520ms cubic-bezier(0.22, 0.36, 0, 1);
+  will-change: opacity;
 }
-@supports (animation-timeline: view()) {
-  .reveal-stagger > * {
-    opacity: 0;
-    animation: reveal-fade both ease-out;
-    animation-timeline: view();
-    animation-range: entry 0% cover 12%;
-  }
+.reveal.is-visible,
+.reveal-stagger > .is-visible {
+  opacity: 1;
 }
 
 /* Hover lifts */
