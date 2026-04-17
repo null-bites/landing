@@ -6,7 +6,8 @@ export function OpenScience() {
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             The{" "}
             <span className="accent-text font-normal">
-              first nutrition-products company
+              <span className="display-italic">first</span> nutrition-products
+              company
             </span>{" "}
             run in the open.
           </h2>

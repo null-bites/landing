@@ -11,7 +11,9 @@ export function CtaFooter() {
             <h2 className="text-balance text-3xl font-light leading-[1.05] tracking-[-0.025em] text-[var(--text)] sm:text-5xl lg:text-6xl">
               Manufacturing with us.
               <br />
-              <span className="accent-text font-normal">Eating with us.</span>
+              <span className="accent-text font-normal">
+                <span className="display-italic">Eating</span> with us.
+              </span>
               <br />
               Investing in us.
             </h2>

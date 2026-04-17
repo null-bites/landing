@@ -50,7 +50,8 @@ export function Designs() {
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             Five proteins going to market.{" "}
             <span className="accent-text font-normal">
-              None of them existed a year ago.
+              None of them <span className="display-italic">existed</span> a
+              year ago.
             </span>
           </h2>
         </div>

@@ -6,15 +6,17 @@ export function Hero() {
       {/* Colorful spectrum protein showcase — right side */}
       <div
         aria-hidden
-        className="absolute inset-y-0 right-[-8%] w-[65%] viewer-mask opacity-95 lg:w-[55%]"
+        className="viewer-glow absolute inset-y-0 right-[-8%] w-[65%] lg:w-[55%]"
       >
-        <ProteinViewer
-          pdbId="1HHO"
-          mode="spectrum"
-          accent="#0E8F85"
-          spinSpeed={0.25}
-          zoom={1.2}
-        />
+        <div className="viewer-mask absolute inset-0 opacity-95">
+          <ProteinViewer
+            pdbId="1HHO"
+            mode="spectrum"
+            accent="#0E8F85"
+            spinSpeed={0.25}
+            zoom={1.2}
+          />
+        </div>
       </div>
 
       {/* Dot grid */}
@@ -29,7 +31,7 @@ export function Hero() {
             Nutrition,
             <br />
             <span className="accent-text font-normal">
-              designed from scratch.
+              <span className="display-italic">designed</span> from scratch.
             </span>
           </h1>
 

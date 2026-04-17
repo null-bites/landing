@@ -62,7 +62,7 @@ export function Pipeline() {
             <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
               Meet the{" "}
               <span className="accent-text font-normal">
-                autonomous scientist.
+                <span className="display-italic">autonomous</span> scientist.
               </span>
             </h2>
           </div>

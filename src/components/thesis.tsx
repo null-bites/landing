@@ -10,7 +10,7 @@ export function Thesis() {
             AlphaFold cracked protein structure in 2020. Billions went to
             pharma.{" "}
             <span className="accent-text font-normal">
-              Nutrition got nothing.
+              Nutrition got <span className="display-italic">nothing.</span>
             </span>
           </h2>
         </div>
