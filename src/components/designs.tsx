@@ -6,7 +6,6 @@ type Design = {
   category: string;
   product: string;
   summary: string;
-  metrics: { label: string; value: string }[];
   color: string;
 };
 
@@ -18,11 +17,6 @@ const designs: Design[] = [
     product: "Iron-dense protein bar",
     summary:
       "Heme-mimic fold that chelates Fe²⁺ from leafy inputs. Animal-source bioavailability, zero animal.",
-    metrics: [
-      { label: "pLDDT", value: "94.2" },
-      { label: "ΔG", value: "−11.3" },
-      { label: "Tm", value: "78 °C" },
-    ],
     color: "#0E8F85",
   },
   {
@@ -32,11 +26,6 @@ const designs: Design[] = [
     product: "Fibrous whole-muscle analogue",
     summary:
       "Long coiled-coil engineered to self-assemble into aligned fibres under shear. The missing chew.",
-    metrics: [
-      { label: "pLDDT", value: "91.8" },
-      { label: "ΔG", value: "−9.7" },
-      { label: "Tm", value: "72 °C" },
-    ],
     color: "#E4A04A",
   },
   {
@@ -46,11 +35,6 @@ const designs: Design[] = [
     product: "Heat-set bake gel",
     summary:
       "Ovalbumin-inspired scaffold tuned for lower set temps. Gels like egg, without touching a hen.",
-    metrics: [
-      { label: "pLDDT", value: "89.4" },
-      { label: "ΔG", value: "−10.1" },
-      { label: "Tm", value: "65 °C" },
-    ],
     color: "#1A2925",
   },
 ];
@@ -92,15 +76,6 @@ export function Designs() {
                   zoom={1.0}
                 />
               </div>
-              <div className="absolute left-4 top-4 flex items-center gap-2">
-                <span
-                  className="pulse-dot inline-block h-1.5 w-1.5 rounded-full"
-                  style={{ background: d.color }}
-                />
-                <span className="font-mono text-[11px] tracking-[0.16em] text-[var(--text-muted)] uppercase">
-                  live · rotating
-                </span>
-              </div>
               <div className="absolute right-4 top-4">
                 <span className="font-mono text-[11px] tracking-[0.14em] text-[var(--text-muted)]">
                   PDB.{d.pdbId}
@@ -124,19 +99,6 @@ export function Designs() {
               <p className="mt-2 text-[14px] leading-relaxed text-[var(--text-dim)]">
                 {d.summary}
               </p>
-
-              <div className="mt-6 grid grid-cols-3 gap-4 border-t border-[var(--border)] pt-4">
-                {d.metrics.map((m) => (
-                  <div key={m.label} className="flex flex-col gap-1">
-                    <span className="font-mono text-[10px] tracking-[0.16em] text-[var(--text-muted)] uppercase">
-                      {m.label}
-                    </span>
-                    <span className="font-mono text-[15px] text-[var(--text)]">
-                      {m.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
           </article>
         ))}

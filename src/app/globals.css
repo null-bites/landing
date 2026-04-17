@@ -199,16 +199,10 @@ body {
 }
 .spin-slow { animation: spin-slow 60s linear infinite; }
 
-/* Scroll-linked reveal (native scroll-timeline — progressive enhancement) */
-@keyframes reveal-rise {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Simple one-shot fade on view — quick and GPU-cheap (opacity only) */
+@keyframes reveal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .reveal {
@@ -217,28 +211,23 @@ body {
 
 @supports (animation-timeline: view()) {
   .reveal {
-    animation: reveal-rise both linear;
+    opacity: 0;
+    animation: reveal-fade both ease-out;
     animation-timeline: view();
-    animation-range: entry 0% cover 22%;
+    animation-range: entry 0% cover 12%;
   }
 }
 
-/* Staggered delay steps for consecutive .reveal siblings */
 .reveal-stagger > * {
   opacity: 1;
 }
 @supports (animation-timeline: view()) {
   .reveal-stagger > * {
-    animation: reveal-rise both linear;
+    opacity: 0;
+    animation: reveal-fade both ease-out;
     animation-timeline: view();
-    animation-range: entry 0% cover 28%;
+    animation-range: entry 0% cover 12%;
   }
-  .reveal-stagger > :nth-child(1) { animation-delay: 0s; }
-  .reveal-stagger > :nth-child(2) { animation-delay: 0.05s; }
-  .reveal-stagger > :nth-child(3) { animation-delay: 0.1s; }
-  .reveal-stagger > :nth-child(4) { animation-delay: 0.15s; }
-  .reveal-stagger > :nth-child(5) { animation-delay: 0.2s; }
-  .reveal-stagger > :nth-child(6) { animation-delay: 0.25s; }
 }
 
 /* Hover lifts */
