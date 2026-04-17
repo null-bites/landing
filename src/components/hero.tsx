@@ -2,19 +2,17 @@ import ProteinViewer from "./protein-viewer";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden pt-24">
-      {/* Colorful spectrum protein showcase — right side */}
-      <div
-        aria-hidden
-        className="viewer-glow absolute inset-y-0 right-[-8%] w-[65%] lg:w-[55%]"
-      >
-        <div className="viewer-mask absolute inset-0 opacity-95">
+    <section className="relative isolate flex min-h-[88vh] items-center overflow-hidden pb-16 pt-28 sm:pt-24 lg:min-h-[92vh]">
+      {/* Colorful spectrum protein showcase — right side (drag to rotate) */}
+      <div className="viewer-glow absolute inset-y-0 right-[-8%] w-[65%] opacity-60 sm:opacity-80 lg:w-[55%] lg:opacity-95">
+        <div className="viewer-mask absolute inset-0">
           <ProteinViewer
             pdbId="1HHO"
             mode="spectrum"
             accent="#0E8F85"
             spinSpeed={0.25}
             zoom={1.2}
+            interactive
           />
         </div>
       </div>
@@ -25,9 +23,9 @@ export function Hero() {
         className="absolute inset-0 -z-10 grid-dots opacity-70"
       />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
-        <div className="max-w-3xl">
-          <h1 className="reveal text-balance text-5xl font-light leading-[1.02] tracking-[-0.03em] text-[var(--text)] sm:text-6xl lg:text-[88px]">
+      <div className="pointer-events-none relative mx-auto w-full max-w-7xl px-6 lg:px-10">
+        <div className="pointer-events-auto max-w-3xl">
+          <h1 className="reveal text-balance text-[44px] font-light leading-[1.04] tracking-[-0.03em] text-[var(--text)] sm:text-6xl lg:text-[88px]">
             Nutrition,
             <br />
             <span className="accent-text font-normal">
