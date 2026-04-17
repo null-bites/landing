@@ -75,6 +75,8 @@ export function Designs() {
                   mode="spectrum"
                   spinSpeed={0.2 + i * 0.05}
                   zoom={1.0}
+                  quality={6}
+                  showSurface={false}
                 />
               </div>
               <div className="absolute right-4 top-4">

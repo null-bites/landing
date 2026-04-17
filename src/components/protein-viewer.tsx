@@ -15,6 +15,8 @@ type Props = {
    */
   mode?: 'solid' | 'spectrum';
   showSurface?: boolean;
+  /** Default 12. Drop to 6 on secondary viewers for perf. */
+  quality?: number;
 };
 
 type Viewer = {
@@ -23,7 +25,7 @@ type Viewer = {
   addSurface: (type: number, style: object) => void;
   zoomTo: () => void;
   zoom: (f: number) => void;
-  spin: (axis: string, speed: number) => void;
+  spin: (axis: string | boolean, speed?: number) => void;
   render: () => void;
   resize: () => void;
   clear: () => void;
@@ -38,6 +40,7 @@ export default function ProteinViewer({
   zoom = 1.05,
   mode = 'solid',
   showSurface = true,
+  quality = 12,
 }: Props) {
   const hostRef = useRef<HTMLDivElement>(null);
   const viewerRef = useRef<Viewer | null>(null);
@@ -45,13 +48,14 @@ export default function ProteinViewer({
   useEffect(() => {
     let cancelled = false;
     let ro: ResizeObserver | null = null;
+    let io: IntersectionObserver | null = null;
 
     const host = hostRef.current;
     if (!host) return;
 
     const dpr = Math.min(
       typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1,
-      3,
+      2,
     );
 
     const applyHd = () => {
@@ -86,8 +90,6 @@ export default function ProteinViewer({
       });
       viewerRef.current = viewer;
 
-      // Scale the underlying canvas backing store to devicePixelRatio so
-      // ribbons render crisp on Retina instead of pixelated.
       if (dpr > 1) applyHd();
 
       const res = await fetch(`https://files.rcsb.org/download/${pdbId}.pdb`);
@@ -100,7 +102,7 @@ export default function ProteinViewer({
         opacity: 1.0,
         thickness: 0.8,
         arrows: true,
-        quality: 12,
+        quality,
         smoothSheet: true,
       };
 
@@ -124,8 +126,27 @@ export default function ProteinViewer({
 
       viewer.zoomTo();
       viewer.zoom(zoom);
-      viewer.spin('y', spinSpeed);
       viewer.render();
+
+      // Only spin when visible. Massive perf win with multiple viewers on a
+      // page — the off-screen product-card viewers stop eating frames while
+      // the user is up in the hero.
+      let isVisible = false;
+      io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting && !isVisible) {
+              isVisible = true;
+              viewerRef.current?.spin('y', spinSpeed);
+            } else if (!entry.isIntersecting && isVisible) {
+              isVisible = false;
+              viewerRef.current?.spin(false);
+            }
+          }
+        },
+        { threshold: 0, rootMargin: '100px' },
+      );
+      io.observe(host);
 
       ro = new ResizeObserver(() => {
         viewerRef.current?.resize();
@@ -138,6 +159,7 @@ export default function ProteinViewer({
     return () => {
       cancelled = true;
       ro?.disconnect();
+      io?.disconnect();
       try {
         viewerRef.current?.clear();
         viewerRef.current = null;
@@ -145,7 +167,7 @@ export default function ProteinViewer({
         /* noop */
       }
     };
-  }, [pdbId, accent, surfaceAccent, spinSpeed, zoom, mode, showSurface]);
+  }, [pdbId, accent, surfaceAccent, spinSpeed, zoom, mode, showSurface, quality]);
 
   return (
     <div
