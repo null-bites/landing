@@ -1,0 +1,18 @@
+# Null Bites Landing — Learnings
+
+## Stack
+- Next.js 16.2.4 (App Router), React 19.2, Tailwind 4 (via @tailwindcss/postcss), TypeScript 5
+- 3dmol (protein viewer), framer-motion (micro-interactions)
+- Local path: ~/workspaces/programming/null-bytes/nullbites-landing
+- Remote (TBD): github.com/null-bites/<repo>
+- Commit every small step; push every ~10 commits (per user preference)
+
+## Design intent
+- "Biocomputation company" — biology × compute.
+- Beat tamarind.bio / phylo.bio / biomini / openbio.tech on "epic, technical, cleaner" (Akshaj's phrasing).
+- Dark mode, molecular accent, technical typography. Live protein viewer as hero candy.
+
+## 3Dmol notes
+- MUST dynamic-import with `ssr: false`; the lib touches window at import time.
+- Spin via `viewer.spin('y', <speed>)`. Wrap host div in `pointer-events-none` so scroll isn't trapped.
+- PDB candidates: 1HHO (hemoglobin, iron/nutrition tie-in), 1OVA (ovalbumin), 1CRN (tiny fallback).
