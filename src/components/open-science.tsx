@@ -85,16 +85,20 @@ function CommitStream() {
         {rows.map((r) => (
           <li
             key={r.hash}
-            className="grid grid-cols-[auto_auto_1fr_auto] items-baseline gap-4 px-4 py-3 font-mono text-[12.5px] leading-relaxed"
+            className="flex flex-col gap-1.5 px-4 py-3 font-mono text-[12px] leading-relaxed sm:grid sm:grid-cols-[auto_auto_1fr_auto] sm:items-baseline sm:gap-4 sm:text-[12.5px]"
           >
-            <span className="text-[var(--text-muted)] tabular-nums">
-              {r.t.padStart(3, " ")} ago
-            </span>
-            <span className="text-[var(--accent)]">{r.hash}</span>
-            <span className="truncate text-[var(--text-dim)]">{r.msg}</span>
-            <span className="rounded border border-[var(--border)] px-1.5 py-0.5 text-[10px] tracking-[0.1em] text-[var(--text-muted)] uppercase">
-              {r.tag}
-            </span>
+            <div className="flex items-center gap-3 sm:contents">
+              <span className="text-[var(--text-muted)] tabular-nums shrink-0">
+                {r.t.padStart(3, " ")} ago
+              </span>
+              <span className="text-[var(--accent)] shrink-0">{r.hash}</span>
+              <span className="ml-auto rounded border border-[var(--border)] px-1.5 py-0.5 text-[10px] tracking-[0.1em] text-[var(--text-muted)] uppercase sm:order-last sm:ml-0">
+                {r.tag}
+              </span>
+            </div>
+            <p className="break-words text-[var(--text-dim)] sm:truncate">
+              {r.msg}
+            </p>
           </li>
         ))}
       </ul>
