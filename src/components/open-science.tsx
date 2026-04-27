@@ -1,7 +1,7 @@
 export function OpenScience() {
   return (
     <section className="relative border-t border-[var(--border)] bg-[var(--surface)]">
-      <div className="mx-auto grid w-full max-w-7xl gap-16 px-6 py-32 lg:grid-cols-12 lg:px-10">
+      <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-20 sm:gap-16 sm:px-6 sm:py-32 lg:grid-cols-12 lg:px-10">
         <div className="reveal lg:col-span-5">
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
             The{" "}

@@ -2,7 +2,7 @@ export function Thesis() {
   return (
     <section
       id="science"
-      className="relative mx-auto w-full max-w-7xl px-6 py-32 lg:px-10"
+      className="relative mx-auto w-full max-w-7xl px-5 py-20 sm:px-6 sm:py-32 lg:px-10"
     >
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">

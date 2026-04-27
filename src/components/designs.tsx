@@ -43,7 +43,7 @@ export function Designs() {
   return (
     <section
       id="products"
-      className="relative mx-auto w-full max-w-7xl px-6 py-32 lg:px-10"
+      className="relative mx-auto w-full max-w-7xl px-5 py-20 sm:px-6 sm:py-32 lg:px-10"
     >
       <div className="mb-16 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <div className="reveal max-w-2xl">
