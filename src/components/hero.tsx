@@ -2,11 +2,13 @@ import ProteinViewer from "./protein-viewer";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[92vh] items-center overflow-hidden pt-24">
-      {/* Colorful spectrum protein showcase — right side, editorial panel */}
+    <section className="relative isolate flex min-h-[92vh] flex-col justify-center overflow-hidden pt-20 lg:flex-row lg:items-center lg:pt-24">
+      {/* Colorful spectrum protein showcase.
+          Mobile: bounded block ABOVE the text so it never overlaps copy.
+          Desktop: editorial right-side panel as before. */}
       <div
         aria-hidden
-        className="viewer-glow absolute inset-y-0 right-[-8%] w-[65%] lg:w-[55%] lg:border-l lg:border-[var(--border)]"
+        className="viewer-glow relative mx-6 mb-6 h-[260px] w-[calc(100%-3rem)] sm:h-[320px] lg:absolute lg:inset-y-0 lg:right-[-8%] lg:mx-0 lg:mb-0 lg:h-auto lg:w-[55%] lg:border-l lg:border-[var(--border)]"
       >
         {/* Panel label at top of viewer column */}
         <div className="hidden absolute left-4 top-8 z-10 lg:block">
@@ -37,7 +39,7 @@ export function Hero() {
 
       <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-10">
         <div className="max-w-3xl">
-          <h1 className="reveal text-balance text-5xl font-light leading-[1.02] tracking-[-0.03em] text-[var(--text)] sm:text-6xl lg:text-[88px]">
+          <h1 className="reveal text-balance text-[44px] font-light leading-[1.04] tracking-[-0.03em] text-[var(--text)] sm:text-6xl lg:text-[88px]">
             Nutrition,
             <br />
             <span className="accent-text font-normal">
@@ -45,14 +47,14 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="reveal mt-8 max-w-xl text-lg leading-relaxed text-[var(--text-dim)] lg:text-xl">
+          <p className="reveal mt-6 max-w-xl text-base leading-relaxed text-[var(--text-dim)] sm:mt-8 sm:text-lg lg:text-xl">
             Null Bites is a{" "}
             <span className="text-[var(--text)]">biocomputation company</span>{" "}
             building nutrition products. We write novel food-grade proteins
             from first principles, then turn them into things you can eat.
           </p>
 
-          <div className="reveal mt-10 flex flex-wrap items-center gap-3">
+          <div className="reveal mt-8 flex flex-wrap items-center gap-3 sm:mt-10">
             <a
               href="#products"
               className="button-primary group inline-flex items-center gap-2 rounded-md bg-[var(--text)] px-5 py-3 text-sm font-medium text-[var(--bg)] hover:bg-[var(--accent)]"
