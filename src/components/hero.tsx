@@ -2,15 +2,14 @@ import ProteinViewer from "./protein-viewer";
 
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[92vh] flex-col justify-center overflow-hidden pt-20 lg:flex-row lg:items-center lg:pt-24">
-      {/* Colorful spectrum protein showcase.
-          Mobile: bounded block ABOVE the text so it never overlaps copy.
-          Desktop: editorial right-side panel as before. */}
+    <section className="relative isolate flex min-h-[88vh] items-center overflow-hidden pt-20 lg:min-h-[92vh] lg:pt-24">
+      {/* Protein viewer.
+          Mobile: full-bleed background, low opacity, sits behind the text.
+          Desktop: editorial right-side panel. */}
       <div
         aria-hidden
-        className="viewer-glow relative mx-6 mb-6 h-[260px] w-[calc(100%-3rem)] sm:h-[320px] lg:absolute lg:inset-y-0 lg:right-[-8%] lg:mx-0 lg:mb-0 lg:h-auto lg:w-[55%] lg:border-l lg:border-[var(--border)]"
+        className="viewer-glow absolute inset-0 lg:inset-y-0 lg:left-auto lg:right-[-8%] lg:w-[55%] lg:border-l lg:border-[var(--border)]"
       >
-        {/* Panel label at top of viewer column */}
         <div className="hidden absolute left-4 top-8 z-10 lg:block">
           <div className="flex items-center gap-2 font-mono text-[10px] tracking-[0.2em] text-[var(--text-muted)] uppercase">
             <span className="h-px w-6 bg-[var(--border-strong)]" />
@@ -20,7 +19,7 @@ export function Hero() {
             hemoglobin · 141 aa
           </div>
         </div>
-        <div className="viewer-mask absolute inset-0 opacity-95">
+        <div className="viewer-mask absolute inset-0 opacity-25 sm:opacity-35 lg:opacity-95">
           <ProteinViewer
             pdbId="1HHO"
             mode="spectrum"
@@ -77,7 +76,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade */}
+      {/* Bottom fade into next section */}
       <div
         aria-hidden
         className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[var(--bg)]"
