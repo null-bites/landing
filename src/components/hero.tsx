@@ -28,32 +28,46 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Mobile only: editorial spectrum-protein backdrop on the right —
-          static (no spin), softly blurred, faded into the text column with a
-          horizontal mask so the headline reads cleanly on the left. */}
+      {/* Mobile only: spinning spectrum-protein backdrop with a horizontal
+          sharpness gradient — transparent on the left so the text column
+          reads, soft/blurred through the middle, crisp on the far right.
+          Two layers do the work: the canvas itself (sharp) and a
+          backdrop-blur veil masked to leave the right edge untouched. */}
       <div
         aria-hidden
-        className="viewer-glow absolute inset-y-0 right-[-18%] w-[78%] lg:hidden"
+        className="viewer-glow absolute inset-y-0 right-[-8%] w-[88%] lg:hidden"
         style={{
           maskImage:
-            "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,1) 70%)",
+            "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
           WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 22%, rgba(0,0,0,0.85) 45%, rgba(0,0,0,1) 70%)",
+            "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
         }}
       >
-        <div
-          className="viewer-mask absolute inset-0 opacity-90"
-          style={{ filter: "blur(3px) saturate(1.05)" }}
-        >
+        <div className="absolute inset-0">
           <ProteinViewer
             pdbId="1HHO"
             mode="spectrum"
             accent="#0E8F85"
-            spinSpeed={0}
-            zoom={1.15}
-            quality={6}
+            spinSpeed={0.18}
+            zoom={1.2}
+            quality={12}
           />
         </div>
+        {/* Sharpness gradient: blur the left/middle of the panel, leave
+            the rightmost ~30% perfectly crisp so the rotating protein
+            reads as high-resolution at the edge it spins out into. */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            backdropFilter: "blur(6px) saturate(1.08)",
+            WebkitBackdropFilter: "blur(6px) saturate(1.08)",
+            maskImage:
+              "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
+          }}
+        />
         <div className="absolute right-3 top-6 font-mono text-[10px] tracking-[0.2em] text-[var(--text-muted)] uppercase">
           <div className="flex items-center justify-end gap-2">
             <span>PDB · 1HHO</span>
@@ -62,6 +76,20 @@ export function Hero() {
           <div className="mt-1 pr-8 text-right">hemoglobin · 141 aa</div>
         </div>
       </div>
+
+      {/* Mobile only: cream wash sitting between the protein and the text
+          column. Holds the body copy on a near-opaque cream up to ~70%
+          of the viewport so headline + paragraph stay clean, then fades
+          out so the rightmost slice of rotating, high-res protein
+          breathes through unobstructed. */}
+      <div
+        aria-hidden
+        className="absolute inset-y-0 left-0 right-0 lg:hidden"
+        style={{
+          background:
+            "linear-gradient(to right, var(--bg) 0%, var(--bg) 52%, rgba(251,250,246,0.92) 66%, rgba(251,250,246,0.4) 80%, rgba(251,250,246,0) 96%)",
+        }}
+      />
 
       {/* Dot grid */}
       <div
@@ -79,7 +107,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="reveal mt-6 max-w-xl text-base leading-relaxed text-[var(--text-dim)] sm:mt-8 sm:text-lg lg:text-xl">
+          <p className="reveal mt-6 max-w-[260px] text-base leading-relaxed text-[var(--text-dim)] sm:mt-8 sm:max-w-xl sm:text-lg lg:text-xl">
             Null Bites is a{" "}
             <span className="text-[var(--text)]">biocomputation company</span>{" "}
             building nutrition products. We write novel food-grade proteins
