@@ -1,7 +1,7 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { Thesis } from "@/components/thesis";
-import { PostAgi } from "@/components/post-agi";
+import { ArticlesPreview } from "@/components/articles-preview";
 import { Pipeline } from "@/components/pipeline";
 import { Designs } from "@/components/designs";
 import { OpenScience } from "@/components/open-science";
@@ -23,8 +23,8 @@ export default function Home() {
         <SectionHeader name="The thesis" current={2} total={TOTAL} />
         <Thesis />
 
-        <SectionHeader name="Essay · After AGI" current={3} total={TOTAL} />
-        <PostAgi />
+        <SectionHeader name="Field notes" current={3} total={TOTAL} />
+        <ArticlesPreview />
 
         <SectionHeader name="The loop" current={4} total={TOTAL} />
         <Pipeline />
