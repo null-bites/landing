@@ -38,9 +38,9 @@ export function Hero() {
         className="viewer-glow absolute inset-y-0 right-[-8%] w-[88%] lg:hidden"
         style={{
           maskImage:
-            "linear-gradient(72deg, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
+            "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
           WebkitMaskImage:
-            "linear-gradient(72deg, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
+            "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
         }}
       >
         <div className="absolute inset-0">
@@ -63,9 +63,9 @@ export function Hero() {
             backdropFilter: "blur(6px) saturate(1.08)",
             WebkitBackdropFilter: "blur(6px) saturate(1.08)",
             maskImage:
-              "linear-gradient(72deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
+              "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
             WebkitMaskImage:
-              "linear-gradient(72deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
+              "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
           }}
         />
         <div className="absolute right-3 top-6 font-mono text-[10px] tracking-[0.2em] text-[var(--text-muted)] uppercase">
@@ -87,7 +87,7 @@ export function Hero() {
         className="absolute inset-y-0 left-0 right-0 lg:hidden"
         style={{
           background:
-            "linear-gradient(72deg, var(--bg) 0%, var(--bg) 52%, rgba(251,250,246,0.92) 66%, rgba(251,250,246,0.4) 80%, rgba(251,250,246,0) 96%)",
+            "linear-gradient(to right, var(--bg) 0%, var(--bg) 52%, rgba(251,250,246,0.92) 66%, rgba(251,250,246,0.4) 80%, rgba(251,250,246,0) 96%)",
         }}
       />
 
