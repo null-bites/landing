@@ -4,22 +4,15 @@ export function OpenScience() {
       <div className="mx-auto grid w-full max-w-7xl gap-12 px-5 py-20 sm:gap-16 sm:px-6 sm:py-32 lg:grid-cols-12 lg:px-10">
         <div className="reveal lg:col-span-5">
           <h2 className="text-balance text-3xl font-light leading-[1.1] tracking-[-0.02em] text-[var(--text)] sm:text-5xl">
-            The{" "}
+            Open by{" "}
             <span className="accent-text font-normal">
-              <span className="display-italic">first</span> nutrition-products
-              company
-            </span>{" "}
-            run in the open.
+              <span className="display-italic">default</span>.
+            </span>
           </h2>
           <p className="mt-8 text-[17px] leading-[1.7] text-[var(--text-dim)]">
-            Every sequence, every score, every failed synthesis. Published
-            within 48 hours. Forkable. Falsifiable. The product margins are
-            ours. The science isn&apos;t.
-          </p>
-          <p className="mt-4 text-[17px] leading-[1.7] text-[var(--text-dim)]">
-            Pharma kept its wins private and its failures private too. Food is
-            too important for that. Open the science, ship the product, let
-            anyone build the next one.
+            Every sequence, score, and failed synthesis lands on GitHub
+            within 48 hours. The science is public; the products are ours
+            to ship.
           </p>
           <div className="mt-10">
             <a

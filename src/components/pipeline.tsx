@@ -68,8 +68,7 @@ export function Pipeline() {
           </div>
           <p className="max-w-sm text-[15px] text-[var(--text-dim)]">
             It runs experiments, scores its own results, and only the designs
-            a human would trust make it to the bench. Everything that follows
-            ends in a thing you can eat.
+            a human would trust make it to the bench.
           </p>
         </div>
 

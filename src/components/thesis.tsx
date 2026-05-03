@@ -24,22 +24,17 @@ export function Thesis() {
             behaviour of a specific protein.
           </p>
           <p>
-            The tools that design drug molecules can design food molecules.{" "}
-            <span className="text-[var(--text)]">
-              The infrastructure to do it at scale exists because we built it.
-            </span>{" "}
+            The tools that design drug molecules can design food molecules.
             ProteinMPNN and ESMFold, stitched into an autonomous loop that
-            reads papers, generates sequences, runs simulations, scores every
-            candidate against real constraints, and iterates on its own.
+            reads papers, generates sequences, scores them against real
+            constraints, and iterates.
           </p>
           <p>
-            Our designs don&apos;t stop at a .pdb file. Each top candidate
-            goes to the bench, into a fermenter, and out the other side as an
-            ingredient formulated into a{" "}
-            <span className="text-[var(--text)]">real product</span>.
-            Performance, recovery, fortification, gut health, plant-based
-            whole foods. The benchmark is simple: you pick it up, you bite
-            into it.
+            Each top candidate goes to the bench, into a fermenter, and out
+            the other side as an ingredient in a{" "}
+            <span className="text-[var(--text)]">real product</span> —
+            performance, recovery, fortification, gut health, plant-based
+            whole foods.
           </p>
         </div>
       </div>
