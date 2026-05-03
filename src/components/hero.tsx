@@ -38,9 +38,9 @@ export function Hero() {
         className="viewer-glow absolute inset-y-0 right-[-8%] w-[88%] lg:hidden"
         style={{
           maskImage:
-            "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
+            "linear-gradient(72deg, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
           WebkitMaskImage:
-            "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
+            "linear-gradient(72deg, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
         }}
       >
         <div className="absolute inset-0">
@@ -63,9 +63,9 @@ export function Hero() {
             backdropFilter: "blur(6px) saturate(1.08)",
             WebkitBackdropFilter: "blur(6px) saturate(1.08)",
             maskImage:
-              "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
+              "linear-gradient(72deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
             WebkitMaskImage:
-              "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
+              "linear-gradient(72deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.5) 72%, rgba(0,0,0,0) 90%)",
           }}
         />
         <div className="absolute right-3 top-6 font-mono text-[10px] tracking-[0.2em] text-[var(--text-muted)] uppercase">
@@ -87,37 +87,9 @@ export function Hero() {
         className="absolute inset-y-0 left-0 right-0 lg:hidden"
         style={{
           background:
-            "linear-gradient(to right, var(--bg) 0%, var(--bg) 52%, rgba(251,250,246,0.92) 66%, rgba(251,250,246,0.4) 80%, rgba(251,250,246,0) 96%)",
+            "linear-gradient(72deg, var(--bg) 0%, var(--bg) 52%, rgba(251,250,246,0.92) 66%, rgba(251,250,246,0.4) 80%, rgba(251,250,246,0) 96%)",
         }}
       />
-
-      {/* Mobile only: blurred spectrum line filling the empty space at the
-          top of the hero, mirroring the bottom fade so the section is
-          framed top + bottom by soft colored bands instead of a hard
-          empty stripe under the nav. CSS-only gradient + blur — no
-          extra WebGL context. */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-16 h-24 overflow-hidden lg:hidden"
-      >
-        <div
-          className="absolute inset-x-[-10%] top-0 h-full"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(124,92,255,0.0) 0%, rgba(124,92,255,0.16) 18%, rgba(14,143,133,0.22) 38%, rgba(214,169,60,0.22) 60%, rgba(194,74,58,0.18) 82%, rgba(194,74,58,0.0) 100%)",
-            filter: "blur(22px) saturate(1.1)",
-          }}
-        />
-        {/* Soft fade into the hero so the line reads as an ambient band
-            and not a discrete bar. */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, var(--bg) 0%, rgba(251,250,246,0) 35%, rgba(251,250,246,0) 65%, var(--bg) 100%)",
-          }}
-        />
-      </div>
 
       {/* Dot grid */}
       <div
