@@ -17,6 +17,12 @@ export function Nav() {
             Thesis
           </Link>
           <Link
+            href="#essay"
+            className="hidden md:inline hover:text-[var(--text)] transition"
+          >
+            Essay
+          </Link>
+          <Link
             href="#pipeline"
             className="hidden sm:inline hover:text-[var(--text)] transition"
           >

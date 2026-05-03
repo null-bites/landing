@@ -1,6 +1,7 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { Thesis } from "@/components/thesis";
+import { PostAgi } from "@/components/post-agi";
 import { Pipeline } from "@/components/pipeline";
 import { Designs } from "@/components/designs";
 import { OpenScience } from "@/components/open-science";
@@ -8,7 +9,7 @@ import { CtaFooter } from "@/components/cta-footer";
 import { SectionHeader } from "@/components/section-header";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
-const TOTAL = 6;
+const TOTAL = 7;
 
 export default function Home() {
   return (
@@ -22,16 +23,19 @@ export default function Home() {
         <SectionHeader name="The thesis" current={2} total={TOTAL} />
         <Thesis />
 
-        <SectionHeader name="The loop" current={3} total={TOTAL} />
+        <SectionHeader name="Essay · After AGI" current={3} total={TOTAL} />
+        <PostAgi />
+
+        <SectionHeader name="The loop" current={4} total={TOTAL} />
         <Pipeline />
 
-        <SectionHeader name="The products" current={4} total={TOTAL} />
+        <SectionHeader name="The products" current={5} total={TOTAL} />
         <Designs />
 
-        <SectionHeader name="Open by default" current={5} total={TOTAL} />
+        <SectionHeader name="Open by default" current={6} total={TOTAL} />
         <OpenScience />
 
-        <SectionHeader name="Get in touch" current={6} total={TOTAL} />
+        <SectionHeader name="Get in touch" current={7} total={TOTAL} />
         <CtaFooter />
       </main>
     </>
