@@ -130,23 +130,27 @@ export default function ProteinViewer({
 
       // Only spin when visible. Massive perf win with multiple viewers on a
       // page — the off-screen product-card viewers stop eating frames while
-      // the user is up in the hero.
-      let isVisible = false;
-      io = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting && !isVisible) {
-              isVisible = true;
-              viewerRef.current?.spin('y', spinSpeed);
-            } else if (!entry.isIntersecting && isVisible) {
-              isVisible = false;
-              viewerRef.current?.spin(false);
+      // the user is up in the hero. Skip the observer entirely when the
+      // caller asked for a static frame (spinSpeed=0) so we never pay for
+      // the render loop on mobile backdrop viewers.
+      if (spinSpeed > 0) {
+        let isVisible = false;
+        io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting && !isVisible) {
+                isVisible = true;
+                viewerRef.current?.spin('y', spinSpeed);
+              } else if (!entry.isIntersecting && isVisible) {
+                isVisible = false;
+                viewerRef.current?.spin(false);
+              }
             }
-          }
-        },
-        { threshold: 0, rootMargin: '100px' },
-      );
-      io.observe(host);
+          },
+          { threshold: 0, rootMargin: '100px' },
+        );
+        io.observe(host);
+      }
 
       ro = new ResizeObserver(() => {
         viewerRef.current?.resize();
