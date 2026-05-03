@@ -91,6 +91,34 @@ export function Hero() {
         }}
       />
 
+      {/* Mobile only: blurred spectrum line filling the empty space at the
+          top of the hero, mirroring the bottom fade so the section is
+          framed top + bottom by soft colored bands instead of a hard
+          empty stripe under the nav. CSS-only gradient + blur — no
+          extra WebGL context. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-16 h-24 overflow-hidden lg:hidden"
+      >
+        <div
+          className="absolute inset-x-[-10%] top-0 h-full"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(124,92,255,0.0) 0%, rgba(124,92,255,0.16) 18%, rgba(14,143,133,0.22) 38%, rgba(214,169,60,0.22) 60%, rgba(194,74,58,0.18) 82%, rgba(194,74,58,0.0) 100%)",
+            filter: "blur(22px) saturate(1.1)",
+          }}
+        />
+        {/* Soft fade into the hero so the line reads as an ambient band
+            and not a discrete bar. */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, var(--bg) 0%, rgba(251,250,246,0) 35%, rgba(251,250,246,0) 65%, var(--bg) 100%)",
+          }}
+        />
+      </div>
+
       {/* Dot grid */}
       <div
         aria-hidden
