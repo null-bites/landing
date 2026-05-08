@@ -2,14 +2,11 @@ export function BusinessModelBody() {
   return (
     <div className="reveal-stagger space-y-7">
       <p>
-        A protein-design company that ships only papers is a research lab,
-        and the world is full of those. Null Bites is built to be a company
-        that sells, and the way it sells follows directly from the shape of
-        the design loop. Once a candidate clears simulation and the bench,
-        the same molecule can leave the building through three different
-        doors, each with its own margin profile and its own speed of
-        compounding. We are building the company so that all three doors
-        are open from the first product onward.
+        A protein-design company that only publishes papers is a lab. Null
+        Bites has to sell. Once a candidate clears simulation and the bench,
+        the same molecule can become a license, a B2B ingredient, or a food
+        product under our own brand. We will take the fastest serious route
+        first.
       </p>
 
       <ThreeDoors />
@@ -18,47 +15,32 @@ export function BusinessModelBody() {
         Door 01 · Licensing the formulation.
       </h2>
       <p>
-        The first door is licensing. A formulation that has cleared
-        simulation, fermentation, and a small bench panel becomes a piece
-        of intellectual property that an existing CPG manufacturer can pay
-        to use, the way a pharma company licenses a small-molecule asset to
-        a generics maker. We run the design and the validation, and a
-        partner with a continental supply chain runs the distribution.
-        License revenue carries the highest gross margin and the lowest
-        capital requirement in the model, and it is the most defensible
-        line against any one product flopping in the market.
+        Licensing is the first route. A formulation that clears simulation,
+        fermentation, and bench testing can become IP that an existing food
+        company pays to use. We run the design and validation. A partner with
+        supply chain and distribution takes it to market. This is the lowest
+        capex revenue in the model, which matters early.
       </p>
 
       <h2 className="pt-6 text-[22px] font-normal leading-snug tracking-[-0.01em] text-[var(--text)] sm:text-[26px]">
         Door 02 · Selling the ingredient.
       </h2>
       <p>
-        The second door is selling the ingredient itself, where Null Bites
-        operates the fermentation and ships the protein as a B2B input to
-        brands that want to formulate their own products around it. Selling
-        the ingredient lets us capture the manufacturing margin in addition
-        to the design margin, and it gives us a long ramp of operational
-        learning before we ever face a consumer shelf. The clean precedent
-        here is the way Impossible Foods originally sold heme as an
-        ingredient before becoming a brand, and it is the cheapest way to
-        build manufacturing competence on someone else&apos;s customer
-        acquisition cost.
+        The second route is selling the ingredient itself. Null Bites can
+        produce the protein through fermentation or a partner route, then sell
+        it as a B2B input to brands that know their category better than we
+        do. That gives us manufacturing learning before we fight for consumer
+        shelf space.
       </p>
 
       <h2 className="pt-6 text-[22px] font-normal leading-snug tracking-[-0.01em] text-[var(--text)] sm:text-[26px]">
         Door 03 · Making the food.
       </h2>
       <p>
-        The third door is the one most people picture when they hear food
-        company, where Null Bites makes finished products under its own
-        brand and sells them through retail and DTC. Own-brand carries the
-        highest absolute revenue per gram and the highest brand value, while
-        also costing the most in marketing, and it is the door we will walk
-        through last and most carefully. The first own-brand products will
-        be ones where the underlying protein is so much better than the
-        legacy protein that the marketing story writes itself, including a
-        recovery shake whose protein folds for human absorption, and a
-        cheese whose casein analog actually melts on a plant-based pizza.
+        The third route is the finished food most people picture first. It is
+        also the most expensive one to earn: brand, packaging, distribution,
+        repeat purchase, returns. We should only do it when the designed
+        protein is obviously better than the commodity substitute.
       </p>
 
       <PullQuote>
@@ -70,30 +52,23 @@ export function BusinessModelBody() {
         How the three doors compound.
       </h2>
       <p>
-        The model that makes the loop pay for itself is one where licensing
-        and ingredient revenue fund the design platform, the design platform
-        produces the rare candidates that justify a brand, and the brand
-        pulls the next wave of licensing partners back to us. We are
-        deliberately staging the three doors so that each one earns the
-        right to fund the next, and so that a single product is never the
-        company&apos;s only path to revenue. The shape of the cash flow is
-        a research-margin ramp first, a manufacturing-margin ramp second,
-        and a brand-margin ramp third, with the design pipeline running
-        underneath all three the entire time.
+        Licensing and ingredient sales should fund the design loop before
+        the brand carries the company. The loop then produces the few
+        candidates good enough to deserve a consumer product. That keeps us
+        from betting the whole company on one SKU.
       </p>
 
       <DoorEconomics />
 
       <p>
-        We expect the first license deal to close inside the next twelve to
-        eighteen months, the first ingredient sales inside the second year,
-        and the first own-brand product on shelves inside the third. Across
-        the next ten years we are building the only company in food where
-        every dollar of revenue compounds back into the engine that designs
-        the next generation of food, and the result is{" "}
+        The rough sequence: first license inside 12 to 18 months, first
+        ingredient sales in year two, own-brand food after the molecule has
+        proven itself. Across the next decade, the goal is simple: every rupee
+        of revenue pays for more designs, better bench data, and better food.
+        The result should be{" "}
         <span className="text-[var(--text)]">
-          more nutritious products, lower-impact production, and a category
-          that finally moves at the speed of software
+          better proteins at lower cost, sold through the route that makes
+          sense first
         </span>
         .
       </p>
@@ -250,21 +225,21 @@ function DoorEconomics() {
   const rows = [
     {
       door: "License",
-      margin: "85–95%",
+      margin: "85 to 95%",
       capex: "Minimal",
-      runway: "12–18 mo",
+      runway: "12 to 18 mo",
     },
     {
       door: "Ingredient",
-      margin: "40–60%",
+      margin: "40 to 60%",
       capex: "Fermentation",
-      runway: "18–30 mo",
+      runway: "18 to 30 mo",
     },
     {
       door: "Own brand",
-      margin: "55–70% gross",
+      margin: "55 to 70% gross",
       capex: "Brand + retail",
-      runway: "30–48 mo",
+      runway: "30 to 48 mo",
     },
   ];
   return (

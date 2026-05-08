@@ -16,3 +16,97 @@
 - MUST dynamic-import with `ssr: false`; the lib touches window at import time.
 - Spin via `viewer.spin('y', <speed>)`. Wrap host div in `pointer-events-none` so scroll isn't trapped.
 - PDB candidates: 1HHO (hemoglobin, iron/nutrition tie-in), 1OVA (ovalbumin), 1CRN (tiny fallback).
+
+## Codex startup-pressure-test result (2026-05-04, Akshaj-requested)
+Tool: codex-startup-pressure-test-skill@0.1.0 (npx, github.com/Kappaemme-git/codex-startup-pressure-test-skill)
+Verdict: **Pivot required**. Read as a tech story looking for a buyer, not a pain-driven product.
+
+Scorecard (all 2-3/5):
+- Pain intensity 3 · Buyer clarity 2 · Urgency 2 · Differentiation 2 · Speed-to-validate 3 · Founder advantage 2
+
+Core assumption surfaced: A CPG buyer has a formulation problem painful enough that they will run a paid pilot with a novel fermentation-derived protein before we have GRAS, scale, or commercial proof.
+
+Three fatal flaws (all High severity):
+1. "Novel protein" is a *liability* to CPG buyers — GRAS, allergenicity, digestibility, brand risk. In-silico scores ≠ what they need before sampling.
+2. Open-by-default conflicts with licensing/IP and may scare CPG legal/regulatory teams.
+3. ProteinMPNN/ESMFold is not the scarce part. Expression yield, purification, taste, texture, thermal behavior, cost/kg, regulatory are the actual killers.
+
+Pivot path it suggested:
+- Pick ONE narrow problem (e.g. casein-like protein for pizza melt/stretch, or neutral-taste high-solubility protein for RTD shakes).
+- Produce bench data vs the incumbent ingredient (whey/casein/pea/soy + hydrocolloids).
+- Get 1 paid pilot or written LOI in 2 weeks.
+- Cut the autonomous paper-reading loop, the broad nutrition platform, and the own-brand consumer story until buyers tell us what they value.
+- Treat "we have no competition" as false by default — current behavior IS the competition.
+
+Sources it pulled: FDA GRAS notice inventory (Impossible heme GRN 737, GRN 1202), GFI fermentation econ report, EVERY 2025 scale-up ($55M).
+
+## Codex pressure-test, 2nd pass on 6-month "special-ops" plan (2026-05-04)
+Same tool. Verdict: pivot required (still). Two corrections it caught that my manual application missed:
+1. **Singapore SFA novel-food review is 9-12 months** after fee acknowledgement, not 3-6. Source: sfa.gov.sg novel food framework guidance.
+2. **"Leucine load = longevity" may be backwards.** A high-anabolic protein conflicts with longevity narratives around mTOR inhibition + protein restriction (Peter Attia, Bryan Johnson, Valter Longo). The leucine-optimized framing is a claim-collision risk — buyers' legal teams may refuse it. We need a different functional claim for the longevity wedge (digestibility? glycemic? amino-acid completeness? — but NOT high-leucine).
+
+Brutal rewrite codex gave us:
+"Null Bites designs precision-fermented performance proteins for longevity and metabolic-health brands. First milestone is not a steak. It is one expressed protein, third-party digestibility/amino-acid/allergenicity screen, and one paid pilot with a brand. Use the steak only later as a fundraising demo after the ingredient has proof and a regulatory path."
+
+First 10 customers — extra hardcore version:
+- Pitch 30 small protein/longevity brands a PAID evaluation: $5k-$25k for access to data + samples + category exclusivity option.
+- Get 3 written pilot agreements BEFORE expression. If nobody pays before samples exist, market isn't pulling hard enough.
+- Use first customer money to fund ONE candidate + ONE expression run.
+
+MVP (codex version):
+- Build: ingredient spec + benchmark model vs whey/casein/pea + regulatory risk memo + paid pilot offer
+- Cut: steak, Michelin dinner, SFA filing, Bryan Johnson, 3D printing, "world's first" claims, shelf launch in 6mo
+- 2-week test: 3 paid LOIs or deposits before any sample exists.
+
+## Codex 3rd pass — V3 "Nvidia of cultivated meat" picks-and-shovels (2026-05-04)
+Verdict: pivot required again. KEY insight: the picks-and-shovels framing is structurally smarter than building a cultivated-steak company, but the 6-month CO-BRANDED CONSUMER STEAK LAUNCH is still the fantasy part. Real 6-month wedge is paid R&D contracts + partner bench data, NOT "world's first co-branded steak".
+
+Corrections it caught:
+- Mosa Meat is NOT the desperate laid-off company. Recent (2025) reporting shows Mosa raised follow-on funding from Invest-NL and is filing EU approval for cultivated fat. Sources confirmed via codex web search.
+- "Plug-in myosin" is probably not plug-in. Structural proteins are produced by cultivated-meat cells themselves, so a novel variant likely means cell-line engineering — which changes the partner's process AND triggers new safety review. Not a drop-in.
+- FDA "no questions" is NOT general approval. Major product/process changes can trigger new FDA review. So even cultivated-meat partners with existing FDA clearance can't just bolt our protein in.
+- "Low TMAO precursors via myosin design" is a weak claim — TMAO precursors are actually carnitine/choline-related, not structural-protein-encoded.
+
+Codex's brutal pitch rewrite for V3:
+"Null Bites designs structural proteins for cultivated steak companies; first milestone is paid partner validation data."
+
+Best buyer profile (revised): NOT the most desperate cultivated-meat company. The best buyer is a funded team with active R&D roadmap and runway to run external experiments — Aleph (post-Israel approval), GOOD Meat, BioCraft, Hoxton, SuperMeat, Multus.
+
+Sales pitch correction: NOT "AI protein platform." Sell a brutally specific audit — "3 candidate interventions to improve YOUR texture/yield/regulatory story in your current product."
+
+Achievable 6-month steak-includes path:
+- m1-2: 15 CTO/CSO calls. Sell ONE $10k-$25k paid audit of one cultivated-meat company's existing structural protein library
+- m3-4: deliver design dossier (1 protein intervention, sequence rationale, manufacturability, allergenicity/tox screen, IP screen, partner test protocol). Partner expresses + tests in their cell line
+- m5-6: bench data back. If positive → sign 2nd partner. Co-presence on partner's NEXT product roadmap (not 6-month launch)
+- Steak ships to consumer market in m12-18 via partner — too late for 6mo headline, but in motion
+
+## Codex 4th pass — V4 "steak-equivalent designed protein, no cultivated/alt-meat customers" (2026-05-04)
+Verdict: **"Pivot required, but not a kill"** — closest to viable we've gotten across 4 iterations.
+
+Codex EXPLICITLY endorses:
+- Customer constraint (no cultivated/alt-meat) is correct, makes plan stronger
+- Steak positioning works IF consumer-facing metaphor, NOT buyer pitch
+
+Codex's blessed pitch wording:
+> "We help premium protein brands launch steak-class anabolic nutrition products without meat, saturated fat, cholesterol, or commodity whey sameness."
+
+Required refinements (still pivot-required without these):
+1. Pick ONE beachhead vertical (premium human longevity/protein brands). Cut pet, clinical, defense, DARPA from 6-month plan — they're "credibility channels, not month-6 revenue channels"
+2. GRAS shortcut is overstated — FDA GRAS is use-specific + safety-data-specific, "modified known protein" doesn't auto-inherit prior clearance. Pay food regulatory lawyer for WRITTEN pathway memo BEFORE wet-lab spend
+3. Soften buyer pitch claims — "complete anabolic protein + iron/B12/creatine-equivalent stack" instead of "without what ages you" / "low TMAO" (those need substantiation or become legal/compliance friction)
+4. Need ONE specific claim no one else can make — higher anabolic density/cal, lower saturated fat/cholesterol, better digestibility, cleaner GLP-1 muscle-preservation story
+5. Real enemy = commodity whey + simple fortification. Brand can already fake "steak macros" today without us, so claim must be NON-fakeable
+6. 2-week MVP: 10 buyer calls → 3 technical follow-ups → 1 paid evaluation BEFORE any expression work
+
+Fact corrections:
+- David Protein valuation may be ~$650-725M (CB Insights), not $1B as I cited. Still raised $75M in 2025, real growth signal.
+- GLP-1 muscle preservation is a HUGE adjacent opening — Nestle launched a GLP-1 nutrition support platform 2025
+
+Realistic 6-month milestone (per codex):
+- 1 paid evaluation contract → bench data → 1 partner brand SKU prep → seed close on traction
+- NOT in-market SKU on shelf by m6 (codex flagged that as overconfident)
+
+Real seed-stage pitch we should run with:
+"Null Bites helps premium protein brands launch steak-class anabolic nutrition products without meat, saturated fat, cholesterol, or commodity whey sameness."
+
+Stop iterating codex here — V4 with these refinements is the answer.

@@ -24,6 +24,7 @@ export function Hero() {
             accent="#0E8F85"
             spinSpeed={0.25}
             zoom={1.2}
+            initialRotationY={68}
           />
         </div>
       </div>
@@ -35,7 +36,7 @@ export function Hero() {
           backdrop-blur veil masked to leave the right edge untouched. */}
       <div
         aria-hidden
-        className="viewer-glow absolute inset-y-0 right-[-8%] w-[88%] lg:hidden"
+        className="viewer-glow absolute inset-y-0 right-[-12%] w-[96%] lg:hidden"
         style={{
           maskImage:
             "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 28%, rgba(0,0,0,0.85) 55%, rgba(0,0,0,1) 78%)",
@@ -49,7 +50,8 @@ export function Hero() {
             mode="spectrum"
             accent="#0E8F85"
             spinSpeed={0.18}
-            zoom={1.2}
+            zoom={1.28}
+            initialRotationY={74}
             quality={12}
           />
         </div>

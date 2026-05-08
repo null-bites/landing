@@ -43,7 +43,7 @@ export function ArticleShell({
             className="absolute inset-0 -z-10 grid-dots opacity-50"
           />
 
-          <header className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-10">
+          <header className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-10">
             <div className="reveal flex items-center gap-3 font-mono text-[11px] tracking-[0.22em] text-[var(--text-muted)] uppercase">
               <span>{kicker}</span>
               <span className="h-px w-8 bg-[var(--border-strong)]" />
@@ -69,7 +69,7 @@ export function ArticleShell({
             </div>
           </header>
 
-          <div className="prose-article mx-auto mt-14 max-w-[680px] px-5 text-[17px] leading-[1.78] text-[var(--text-dim)] sm:mt-20 sm:px-6 sm:text-[18px] lg:px-10">
+          <div className="prose-article mx-auto mt-14 max-w-[860px] px-5 text-[17px] leading-[1.78] text-[var(--text-dim)] sm:mt-20 sm:px-6 sm:text-[18px] lg:px-10">
             {children}
           </div>
 

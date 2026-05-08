@@ -18,13 +18,13 @@ export default function BusinessModelPage() {
       readingTime={meta.readingTime}
       title={
         <>
-          How we plan to{" "}
+          How Null Bites{" "}
           <span className="accent-text font-normal">
-            <span className="display-italic">make</span> money.
+            <span className="display-italic">makes</span> money.
           </span>
         </>
       }
-      subtitle="Three doors out of the design loop: licensing, ingredient sales, own brand. The model that lets every dollar of revenue fund the engine that designs the next product."
+      subtitle="First we license designed proteins and sell ingredients. Own-brand food comes later, after the molecule has earned the risk."
     >
       <BusinessModelBody />
     </ArticleShell>

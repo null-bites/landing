@@ -2,20 +2,18 @@ export function AfterAgiBody() {
   return (
     <div className="reveal-stagger space-y-8">
       <p className="text-[19px] leading-[1.55] text-[var(--text)] sm:text-[20px]">
-        We started Null Bites because the same protein-design models that are
-        now reshaping pharma can reshape what we eat, and almost no one is
-        building a food company on top of them.
+        Protein design is already changing drug discovery. Food is still
+        mostly using molecules that plants and animals happened to give us.
+        Null Bites exists because that gap is too large to ignore.
       </p>
 
       <DividendBar />
 
       <p>
-        Pharma absorbed roughly the entire AlphaFold dividend, which meant the
-        largest leap in molecular design since recombinant DNA went straight
-        into the drug stack and skipped the dinner plate. The{" "}
-        <span className="text-[var(--text)]">post-AGI food company</span> is
-        the one built to close that gap, while the underlying science is
-        still wide open and the moats have not yet been drawn.
+        Pharma absorbed most of the AlphaFold dividend. The largest leap in
+        molecular design since recombinant DNA went straight into drug
+        discovery and mostly skipped the dinner plate. We are taking the same
+        stack and changing the target: bite, melt, gel, digestibility, cost.
       </p>
 
       <SectionLabel>The loop, before and after</SectionLabel>
@@ -23,25 +21,22 @@ export function AfterAgiBody() {
       <LoopComparison />
 
       <p>
-        The binding constraint moved from the lab bench to the design loop.
-        We treat every food molecule as an object that can be written from
-        scratch, scored against real constraints, and re-written until the
-        candidate clears the bench. The company that wins is the one that
-        runs that loop the most times per week, on the broadest set of
-        nutrients.
+        The hard part moved from making one candidate to choosing which
+        candidate deserves bench work. We treat each food protein as something
+        we can write, score, reject, and rewrite. The company that learns
+        fastest wins.
       </p>
 
       <PullQuote>
-        The bottleneck moved from the lab bench to the design loop, and that
-        is the layer we are building the company around.
+        The bottleneck moved from the lab bench to the design loop. That is
+        the layer we are building around.
       </PullQuote>
 
       <SectionLabel>What we redesign</SectionLabel>
 
       <p>
-        Almost every food property a person actually cares about traces back
-        to a small number of proteins, and each of those proteins is now a
-        designable object.
+        A lot of what people feel in food comes from protein behavior:
+        texture, melt, set, chew, foam. Those are no longer fixed properties.
       </p>
 
       <ProteinGrid />
@@ -51,16 +46,15 @@ export function AfterAgiBody() {
       <ShipPrinciples />
 
       <p>
-        We expect to be wrong about specifics, in the same way every early
-        bet on a new computational substrate has been wrong about specifics,
-        and we are building the company so that being wrong cheaply and
-        quickly is part of the operating loop.
+        We expect some molecules to fail. That is the point of the loop:
+        kill weak candidates in software, send fewer to the bench, and let
+        the food team spend time on the ones with a real shot.
       </p>
 
       <HorizonStrip />
 
       <p className="text-balance text-center text-[20px] leading-[1.5] text-[var(--text)] sm:text-[22px]">
-        We are designing the proteins that future eats,{" "}
+        We are designing food proteins{" "}
         <span className="display-italic accent-text">in public, today</span>.
       </p>
     </div>
@@ -73,7 +67,7 @@ function DividendBar() {
   return (
     <figure className="reveal my-2 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]/60 p-6 sm:p-7">
       <figcaption className="label mb-5">
-        Where the AlphaFold dividend went · 2020 — 2025
+        Where the AlphaFold dividend went · 2020 to 2025
       </figcaption>
       <div className="flex h-12 w-full overflow-hidden rounded-md border border-[var(--border-strong)]">
         <div
@@ -102,7 +96,7 @@ function DividendBar() {
         <span className="text-right">Nutrition · ingredient design</span>
       </div>
       <p className="mt-4 text-[13px] leading-relaxed text-[var(--text-dim)]">
-        Estimate of where post-AlphaFold investment in protein design has
+        Rough estimate of where post-AlphaFold protein-design investment has
         landed. Almost the entire cycle has gone to therapeutics.
       </p>
     </figure>
@@ -248,9 +242,21 @@ function ProteinGrid() {
 
 function ShipPrinciples() {
   const items = [
-    { kicker: "01", title: "Designs every ingredient", detail: "Sequence-level control." },
-    { kicker: "02", title: "Closes the loop in software", detail: "Coffee-cost iterations." },
-    { kicker: "03", title: "Ships product, opens science", detail: "Margin in fermentation, brand, and distribution." },
+    {
+      kicker: "01",
+      title: "Write the molecule",
+      detail: "Sequence-level control.",
+    },
+    {
+      kicker: "02",
+      title: "Reject quickly",
+      detail: "Cheap design passes before bench work.",
+    },
+    {
+      kicker: "03",
+      title: "Pick the right route",
+      detail: "Fermentation, partner formulation, licensing, or own brand.",
+    },
   ];
   return (
     <ol className="reveal-stagger my-2 grid gap-3 sm:grid-cols-3">
@@ -293,9 +299,9 @@ function HorizonStrip() {
         <div>
           <p className="label">2040</p>
           <p className="mt-2 text-[15px] leading-snug text-[var(--text)]">
-            Every gram is a deliberate choice about{" "}
+            Every gram can be designed around{" "}
             <span className="display-italic accent-text">
-              nutrition, sustainability, and human longevity
+              nutrition, cost, and taste
             </span>
             .
           </p>

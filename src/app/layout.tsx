@@ -22,15 +22,15 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nullbites.com"),
   title: {
-    default: "Null Bites — Nutrition, computationally designed.",
+    default: "Null Bites: Nutrition, computationally designed.",
     template: "%s · Null Bites",
   },
   description:
     "Null Bites is an AI-first nutrition biomanufacturing company. We design novel food-grade proteins from scratch and turn them into real products people can eat.",
   openGraph: {
-    title: "Null Bites — Nutrition, computationally designed.",
+    title: "Null Bites: Nutrition, computationally designed.",
     description:
-      "An AI-first nutrition biomanufacturing company. Proteins designed from scratch, engineered for a future that can feed ten billion.",
+      "Food proteins designed from scratch, then turned into products people can eat.",
     url: "https://nullbites.com",
     siteName: "Null Bites",
     type: "website",

@@ -292,7 +292,7 @@ const scenes: Scene[] = [
     n: "02",
     title: "We score, it re-scores itself",
     caption:
-      "Every candidate folded in silico and stress-tested. A self-critic throws out 99% as too optimistic.",
+      "Every candidate is folded in silico and stress-tested, and a self-critic throws out 99% of them as too optimistic.",
     icon: <RankBars />,
   },
   {
@@ -306,7 +306,7 @@ const scenes: Scene[] = [
     n: "04",
     title: "A product you can eat",
     caption:
-      "Formulated, sensory-panelled, shipped. The only benchmark that counts is a person taking a bite.",
+      "Each ingredient is formulated, sensory-panelled, and shipped, because the only benchmark that counts is a person taking a bite.",
     icon: <ChefProduct />,
   },
 ];

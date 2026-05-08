@@ -18,9 +18,8 @@ export function ArticlesPreview() {
               </span>
             </h2>
             <p className="reveal mt-6 max-w-md text-[16px] leading-relaxed text-[var(--text-dim)]">
-              Long-form on what a post-AGI food company actually looks like,
-              how the design loop pays for itself, and what we are building
-              toward. Hover the link for the one-line version.
+              Notes on the business model, the protein-design loop, and the
+              parts of food science we are turning into product.
             </p>
             <div className="reveal mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[14px]">
               <Link
@@ -30,11 +29,10 @@ export function ArticlesPreview() {
                 <span>All articles</span>
                 <span aria-hidden>→</span>
               </Link>
-              <VisionLink />
             </div>
           </header>
 
-          <ul className="reveal-stagger grid gap-4 sm:grid-cols-2 lg:col-span-7">
+          <ul className="reveal-stagger grid gap-5 sm:grid-cols-2 lg:col-span-7">
             {articles.map((a) => (
               <li key={a.slug}>
                 <ArticleCard
@@ -95,37 +93,5 @@ function ArticleCard({
         </span>
       </div>
     </Link>
-  );
-}
-
-/* Hover-reveal vision: a small inline link that pops a poetic one-liner.
-   Pure CSS hover (group-hover) so it works on touch via tap-and-hold and
-   stays keyboard-focusable. */
-function VisionLink() {
-  return (
-    <span className="vision-link group relative inline-flex items-center gap-1 cursor-help text-[var(--text-dim)] hover:text-[var(--accent)] focus-within:text-[var(--accent)] transition">
-      <span className="underline decoration-dotted underline-offset-4">
-        the 2040 kitchen
-      </span>
-      <span aria-hidden className="text-[var(--text-muted)] group-hover:text-[var(--accent)]">
-        ✦
-      </span>
-      <span
-        role="tooltip"
-        className="vision-pop pointer-events-none absolute left-1/2 top-full z-30 mt-3 w-[280px] -translate-x-1/2 translate-y-1 rounded-lg border border-[var(--border-strong)] bg-[var(--bg)] p-4 text-left text-[13px] leading-[1.55] text-[var(--text-dim)] opacity-0 shadow-md transition-all duration-200 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100"
-      >
-        <span className="block font-mono text-[10px] tracking-[0.22em] text-[var(--text-muted)] uppercase">
-          Vision
-        </span>
-        <span className="mt-2 block text-[var(--text)]">
-          A child in 2040 picks up a glass of milk, and every gram of it is
-          a deliberate choice about{" "}
-          <span className="display-italic accent-text">
-            nutrition, sustainability, and human longevity
-          </span>
-          .
-        </span>
-      </span>
-    </span>
   );
 }

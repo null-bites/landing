@@ -7,7 +7,7 @@ import { articles } from "@/lib/articles";
 export const metadata: Metadata = {
   title: "Articles",
   description:
-    "Long-form notes from Null Bites — what a post-AGI food company looks like, how the design loop pays for itself, and what we are building toward.",
+    "Notes from Null Bites on protein design, food science, and how the company makes money.",
 };
 
 export default function ArticlesIndex() {
@@ -43,18 +43,17 @@ export default function ArticlesIndex() {
               </span>
             </h1>
             <p className="mt-6 text-[18px] leading-[1.6] text-[var(--text-muted)]">
-              Long-form on what a post-AGI food company looks like, how the
-              design loop pays for itself, and the future we are building
-              toward. Updated as we ship.
+              Short essays on the business model, the design loop, and the
+              product bets we are making as we move from sequence to food.
             </p>
           </header>
 
-          <ul className="reveal-stagger mx-auto mt-16 grid max-w-3xl gap-3">
+          <ul className="reveal-stagger mx-auto mt-16 grid max-w-6xl gap-5 md:grid-cols-2">
             {articles.map((a) => (
               <li key={a.slug}>
                 <Link
                   href={`/articles/${a.slug}`}
-                  className="group block rounded-lg border border-[var(--border)] bg-[var(--bg)] p-6 transition hover:-translate-y-[2px] hover:border-[var(--accent)] hover:shadow-sm sm:p-8"
+                  className="group flex h-full flex-col rounded-lg border border-[var(--border)] bg-[var(--bg)] p-6 transition hover:-translate-y-[2px] hover:border-[var(--accent)] hover:shadow-sm sm:p-8"
                 >
                   <div className="flex items-center gap-3 font-mono text-[11px] tracking-[0.22em] text-[var(--text-muted)] uppercase">
                     <span className="text-[var(--accent)]">{a.kicker}</span>
@@ -69,7 +68,7 @@ export default function ArticlesIndex() {
                   <p className="mt-4 text-[15px] leading-[1.7] text-[var(--text-dim)]">
                     {a.excerpt}
                   </p>
-                  <div className="mt-6 inline-flex items-center gap-1 font-mono text-[12px] tracking-[0.16em] text-[var(--text-dim)] uppercase group-hover:text-[var(--accent)] transition">
+                  <div className="mt-auto inline-flex items-center gap-1 pt-8 font-mono text-[12px] tracking-[0.16em] text-[var(--text-dim)] uppercase group-hover:text-[var(--accent)] transition">
                     Read
                     <span
                       aria-hidden

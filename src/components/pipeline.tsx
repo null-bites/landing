@@ -19,7 +19,7 @@ export function Pipeline() {
       label: "Design",
       tech: "ProteinMPNN · RFdiffusion",
       detail:
-        "Novel amino-acid sequences generated against a target fold with a bundle of functional constraints: heat stability, water solubility, fibre alignment, binding pocket geometry.",
+        "Novel amino-acid sequences are generated against a target fold with a bundle of functional constraints: heat stability, water solubility, fibre alignment, binding pocket geometry.",
     },
     {
       id: "03",
@@ -33,7 +33,7 @@ export function Pipeline() {
       label: "Self-critique",
       tech: "Re-read · re-rank · drop",
       detail:
-        "146 cycles of self-correction. The system reads its own output and drops candidates that look too confident. Designs that survive cycle 140+ get to the bench.",
+        "The pipeline runs 146 cycles of self-correction, where the system re-reads its own output and drops candidates that look too confident. Designs that survive cycle 140+ get to the bench.",
     },
     {
       id: "05",
@@ -47,7 +47,7 @@ export function Pipeline() {
       label: "Product",
       tech: "Formulate · sensory · ship",
       detail:
-        "The ingredient becomes food. Sensory panels with real people. If it passes, it ships. If it fails, the result goes back to the top of the loop.",
+        "The ingredient becomes food and goes through sensory panels with real people. A pass means it ships, and a fail sends the result back to the top of the loop.",
     },
   ];
 

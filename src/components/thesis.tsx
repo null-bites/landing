@@ -32,9 +32,9 @@ export function Thesis() {
           <p>
             Each top candidate goes to the bench, into a fermenter, and out
             the other side as an ingredient in a{" "}
-            <span className="text-[var(--text)]">real product</span> —
-            performance, recovery, fortification, gut health, plant-based
-            whole foods.
+            <span className="text-[var(--text)]">real product</span>:
+            performance food, recovery, fortification, gut health, or
+            plant-based whole foods.
           </p>
         </div>
       </div>

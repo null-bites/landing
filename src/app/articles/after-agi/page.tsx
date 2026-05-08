@@ -18,14 +18,13 @@ export default function AfterAgiPage() {
       readingTime={meta.readingTime}
       title={
         <>
-          A food company built for{" "}
+          Why design food{" "}
           <span className="accent-text font-normal">
-            the world that comes{" "}
-            <span className="display-italic">after</span> AGI.
+            <span className="display-italic">proteins</span> at all.
           </span>
         </>
       }
-      subtitle="Why Null Bites exists, what a post-AGI food company actually looks like, and the bet we are making while the science is still wide open."
+      subtitle="Protein design left the lab faster than food noticed. We are pointing the stack at meat, dairy, and everyday nutrition."
     >
       <AfterAgiBody />
     </ArticleShell>

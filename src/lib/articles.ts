@@ -9,22 +9,22 @@ export type ArticleMeta = {
 
 export const articles: ArticleMeta[] = [
   {
-    slug: "after-agi",
-    kicker: "Essay · 01",
-    title: "A food company built for the world that comes after AGI.",
-    excerpt:
-      "Why Null Bites exists, what a post-AGI food company actually looks like, and the bet we are making while the science is still wide open.",
-    date: "May 2026",
-    readingTime: "4 min read",
-  },
-  {
     slug: "business-model",
-    kicker: "Essay · 02",
-    title: "How we plan to make money.",
+    kicker: "Essay · 01",
+    title: "How Null Bites makes money.",
     excerpt:
-      "Three doors out of the design loop: licensing, ingredient sales, own brand. The model that lets every dollar of revenue fund the engine that designs the next product.",
+      "First we license designed proteins and sell ingredients. Own-brand food comes later, after the molecule has earned the risk.",
     date: "May 2026",
     readingTime: "5 min read",
+  },
+  {
+    slug: "after-agi",
+    kicker: "Essay · 02",
+    title: "Why design food proteins at all.",
+    excerpt:
+      "Protein design left the lab faster than food noticed. This is the case for pointing the stack at meat, dairy, and everyday nutrition.",
+    date: "May 2026",
+    readingTime: "4 min read",
   },
 ];
 

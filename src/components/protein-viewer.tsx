@@ -9,6 +9,7 @@ type Props = {
   className?: string;
   spinSpeed?: number;
   zoom?: number;
+  initialRotationY?: number;
   /**
    * "solid" = single-color cartoon using `accent`.
    * "spectrum" = rainbow N→C terminus (violet → blue → green → yellow → red).
@@ -26,6 +27,7 @@ type Viewer = {
   zoomTo: () => void;
   zoom: (f: number) => void;
   spin: (axis: string | boolean, speed?: number) => void;
+  rotate?: (angle: number, axis?: string) => void;
   render: () => void;
   resize: () => void;
   clear: () => void;
@@ -38,6 +40,7 @@ export default function ProteinViewer({
   className = '',
   spinSpeed = 0.25,
   zoom = 1.05,
+  initialRotationY = 0,
   mode = 'solid',
   showSurface = true,
   quality = 12,
@@ -126,6 +129,7 @@ export default function ProteinViewer({
 
       viewer.zoomTo();
       viewer.zoom(zoom);
+      if (initialRotationY) viewer.rotate?.(initialRotationY, 'y');
       viewer.render();
 
       // Only spin when visible. Massive perf win with multiple viewers on a
@@ -171,7 +175,17 @@ export default function ProteinViewer({
         /* noop */
       }
     };
-  }, [pdbId, accent, surfaceAccent, spinSpeed, zoom, mode, showSurface, quality]);
+  }, [
+    pdbId,
+    accent,
+    surfaceAccent,
+    spinSpeed,
+    zoom,
+    initialRotationY,
+    mode,
+    showSurface,
+    quality,
+  ]);
 
   return (
     <div

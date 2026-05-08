@@ -16,7 +16,7 @@ const designs: Design[] = [
     category: "Fortification",
     product: "Iron-dense protein bar",
     summary:
-      "Heme-mimic fold that chelates Fe²⁺ from leafy inputs. Animal-source bioavailability, zero animal.",
+      "Heme-mimic fold that chelates Fe²⁺ from leafy inputs and matches animal-source bioavailability without an animal anywhere in the supply chain.",
     color: "#0E8F85",
   },
   {
@@ -25,7 +25,7 @@ const designs: Design[] = [
     category: "Plant-based meat",
     product: "Fibrous whole-muscle analogue",
     summary:
-      "Long coiled-coil engineered to self-assemble into aligned fibres under shear. The missing chew.",
+      "Long coiled-coil engineered to self-assemble into aligned fibres under shear, so the bite resists the way real muscle does.",
     color: "#E4A04A",
   },
   {

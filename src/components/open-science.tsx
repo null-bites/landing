@@ -54,7 +54,7 @@ function CommitStream() {
   const rows = [
     { t: "2m", hash: "7ab91f2", msg: "NB-IRON-07: dock score improved −11.3 → −12.1", tag: "design" },
     { t: "14m", hash: "e4c3a88", msg: "pipeline: self-critic caught over-confidence on fold #146", tag: "critic" },
-    { t: "1h", hash: "c10b05d", msg: "NB-FIBRE-03: simulation @ shear rate 500s⁻¹ — stable", tag: "sim" },
+    { t: "1h", hash: "c10b05d", msg: "NB-FIBRE-03: stable at shear rate 500s⁻¹", tag: "sim" },
     { t: "3h", hash: "0ff22a4", msg: "ingest: 17 new papers from NeurIPS bio-track", tag: "ingest" },
     { t: "6h", hash: "9ae8721", msg: "NB-GEL-02: Tm reduced 72 → 65°C after redesign", tag: "design" },
     { t: "9h", hash: "3d7c5a1", msg: "bench: gene synthesis order placed for NB-IRON-07", tag: "synth" },
