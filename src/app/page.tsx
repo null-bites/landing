@@ -4,12 +4,12 @@ import { Thesis } from "@/components/thesis";
 import { ArticlesPreview } from "@/components/articles-preview";
 import { Pipeline } from "@/components/pipeline";
 import { Designs } from "@/components/designs";
-import { OpenScience } from "@/components/open-science";
+
 import { CtaFooter } from "@/components/cta-footer";
 import { SectionHeader } from "@/components/section-header";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
-const TOTAL = 7;
+const TOTAL = 6;
 
 export default function Home() {
   return (
@@ -32,10 +32,7 @@ export default function Home() {
         <SectionHeader name="The products" current={5} total={TOTAL} />
         <Designs />
 
-        <SectionHeader name="Open by default" current={6} total={TOTAL} />
-        <OpenScience />
-
-        <SectionHeader name="Get in touch" current={7} total={TOTAL} />
+        <SectionHeader name="Get in touch" current={6} total={TOTAL} />
         <CtaFooter />
       </main>
     </>
