@@ -156,10 +156,16 @@ export default function ProteinViewer({
         io.observe(host);
       }
 
+      let resizeTimeout: NodeJS.Timeout;
       ro = new ResizeObserver(() => {
-        viewerRef.current?.resize();
-        if (dpr > 1) applyHd();
-        viewerRef.current?.render();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          if (!cancelled && viewerRef.current) {
+            viewerRef.current.resize();
+            if (dpr > 1) applyHd();
+            viewerRef.current.render();
+          }
+        }, 50); // 50ms debounce
       });
       ro.observe(hostRef.current);
     })();
